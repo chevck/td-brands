@@ -12,6 +12,7 @@ import PepperNut from "../assets/pepper-nut.png";
 import JollofPlate from "../assets/jollof-plate.png";
 import Carousel from "react-multi-carousel";
 import MangrooveBrand from "../assets/mangroove-brand.svg";
+import React from "react";
 
 export function LandingPage() {
   const responsive = {
@@ -31,6 +32,31 @@ export function LandingPage() {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+  const CustomDot = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      index,
+      active,
+      carouselState: { currentSlide, deviceType },
+    } = rest;
+    const carouselItems = [
+      <div className="dot-item">1</div>,
+      <div className="dot-item">2</div>,
+      <div className="dot-item">3</div>,
+    ];
+    // onMove means if dragging or swiping in progress.
+    // active is provided by this lib for checking if the item is active or not.
+    return (
+      <button
+        className={active ? "active" : "inactive"}
+        onClick={() => onClick()}
+      >
+        {React.Children.toArray(carouselItems)[index]}
+      </button>
+    );
+  };
+
   return (
     <div className="landing-page">
       <Header />
@@ -67,7 +93,7 @@ export function LandingPage() {
             </button>
           </div>
         </div>
-        <div className="products-range">
+        <div className="products-range" id="products-range">
           <h5>Explore our range</h5>
           <div className="">
             <div className="products">
@@ -115,7 +141,7 @@ export function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="about-mangroove">
+        <div className="about-mangroove" id="about-us">
           <h5>About Mangroove Foods</h5>
           <img src={Peas} alt="Peas" className="img-fluid side-img peas" />
           <h6>
@@ -141,12 +167,13 @@ export function LandingPage() {
           <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              autoPlay={true}
+              // autoPlay={true}
               autoPlaySpeed={1000}
               centerMode={false}
               showDots={true}
               responsive={responsive}
               className="our-recipes-content-carousel"
+              // customDot={<CustomDot />}
             >
               {[1, 2, 3].map((_, key) => (
                 <div className="our-recipes-content-item" key={key}>
@@ -187,13 +214,13 @@ export function LandingPage() {
           <div className="menu-column">
             <ul>
               <li>
-                <a>About Us</a>
+                <a href="#about-us">About Us</a>
               </li>
               <li>
-                <a>products</a>
+                <a href="#products-range">products</a>
               </li>
               <li>
-                <a>Contact Us</a>
+                <a href="#contact-us">Contact Us</a>
               </li>
               <li>
                 <a>Privacy Policy</a>
@@ -229,6 +256,20 @@ export function LandingPage() {
               className="img-fluid mangroove-brand"
             />
             <div className="social-media-icons bottom-footer">
+              <a href="https://www.facebook.com/mangroovefoods">
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/mangroovefoods">
+                <i className="bi bi-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div className="mobile-copyright-column">
+            <p>
+              © MANGROVE FOODS LTD {new Date().getFullYear()} - ALL RIGHTS
+              RESERVED
+            </p>
+            <div className="social-media-icons">
               <a href="https://www.facebook.com/mangroovefoods">
                 <i className="bi bi-facebook"></i>
               </a>

@@ -1,0 +1,263 @@
+@media only screen and (max-width: 600px) {
+  .landing-page {
+    .header-container {
+      padding: 0px 20px;
+
+      .navbar {
+        .navbar-brand {
+          img {
+            width: 150px;
+          }
+        }
+
+        .menu-items {
+          ul {
+            text-align: center;
+            gap: 10px;
+            margin-left: 0;
+
+            li a {
+              font-size: 18px;
+              line-height: 17px;
+            }
+          }
+        }
+
+        .social-media-icons {
+          ul li {
+            text-align: center;
+
+            a i {
+              font-size: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .hero-section {
+      height: 400px;
+      .hero-section-content {
+        .hero-section-img {
+          &._left-leaves {
+            width: 300px;
+            left: -144px;
+            top: -102px;
+          }
+
+          &._full-color-flavor {
+            width: 325px;
+            left: 10px;
+            top: 15px;
+          }
+
+          &._tomatoes {
+            width: 300px;
+            top: 250px;
+            left: -110px;
+          }
+
+          &._beans {
+            left: -52px;
+            width: 94px;
+            top: 170px;
+          }
+
+          &._leaves-right,
+          &._corn {
+            display: none;
+          }
+        }
+
+        button {
+          height: 35px;
+          width: 225px;
+          left: 2%;
+          bottom: 100px;
+
+          p {
+            font-size: 15px;
+          }
+
+          i {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+
+    .products-range {
+      h5 {
+        line-height: 35px;
+        font-size: 45px;
+        padding-top: 110px;
+        margin-bottom: 40px;
+      }
+
+      .products {
+        flex-wrap: wrap;
+        row-gap: 25px;
+
+        img {
+          width: 50%;
+        }
+      }
+
+      .discover-more-btn {
+        button {
+          margin-bottom: 40px;
+          width: 250px;
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .about-mangroove {
+      h5 {
+        font-size: 45px;
+        line-height: 45px;
+        padding-top: 50px;
+        margin-bottom: 20px;
+      }
+
+      h6 {
+        font-size: 20px;
+        line-height: 27px;
+        padding: 0 20px;
+        width: 100%;
+      }
+
+      img {
+        padding: 0;
+      }
+
+      .side-img {
+        &.pepper-nut {
+          display: none;
+        }
+      }
+
+      .about-mangroove-block-2 {
+        height: 100px;
+      }
+    }
+
+    .our-recipes {
+      h5 {
+        padding-top: 50px;
+        font-size: 45px;
+      }
+      .our-recipes-content {
+        padding-bottom: 50px;
+        padding-top: 20px;
+
+        .our-recipes-content-carousel {
+          ul {
+            li {
+              display: flex;
+              justify-content: center;
+            }
+            &.react-multi-carousel-track {
+              display: flex;
+              justify-content: center;
+              gap: 0;
+            }
+          }
+        }
+
+        .our-recipes-content-item {
+          width: 400px;
+          padding: 20px 15px;
+          height: 216px;
+
+          .our-recipes-content-item-img {
+            img {
+              width: 295px;
+            }
+          }
+
+          .our-recipes-content-item-text {
+            h6 {
+              font-size: 35px;
+              margin-bottom: 17px;
+            }
+            p {
+              margin-bottom: 19px;
+              font-size: 15px;
+              line-height: 20px;
+            }
+            button {
+              width: 165px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .more-recipes-btn-container {
+        padding-bottom: 50px;
+        button {
+          width: 250px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      flex-flow: column;
+      padding: 20px 30px;
+      gap: 15px;
+
+      .logo-column {
+        img {
+          width: 200px;
+        }
+      }
+
+      .height-line {
+        display: none;
+      }
+
+      .newsletter-column {
+        width: 100%;
+
+        button {
+          padding: 5px 25px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .bottom-footer,
+      .mangroove-brand {
+        display: none !important;
+      }
+
+      .mobile-copyright-column {
+        display: block;
+        margin-top: -20px;
+
+        p {
+          font-size: 13px;
+          color: var(--secondary-color);
+          font-weight: 200;
+        }
+
+        .social-media-icons {
+          display: flex;
+          gap: 10px;
+          a {
+            color: #fff;
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+}

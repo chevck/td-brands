@@ -133,11 +133,11 @@ button {
     height: fit-content;
 
     h5 {
-      padding-top: 183px;
+      padding-top: 150px;
       color: #004f4e;
       font-size: 65px;
       font-weight: 700;
-      line-height: 83spx;
+      line-height: 83px;
       margin-bottom: 50px;
       text-align: center;
     }
@@ -187,6 +187,7 @@ button {
     background-color: #f7eacc;
     position: relative;
     overflow-x: clip;
+    text-align: center;
 
     h5 {
       text-align: center;
@@ -203,14 +204,16 @@ button {
       color: #004f4e;
       width: 1066px;
       margin: auto;
-      line-height: 30px;
+      line-height: 35px;
       margin-bottom: 36px;
+      font-weight: 300;
     }
 
     img {
       padding: 40px 8%;
       position: relative;
       z-index: 1;
+      width: 1300px;
     }
 
     .side-img {
@@ -223,9 +226,9 @@ button {
       }
 
       &.pepper-nut {
-        top: -400px;
-        width: 1200px;
-        right: -530px;
+        bottom: -195px;
+        width: 765px;
+        left: -405px;
       }
     }
 
@@ -234,7 +237,7 @@ button {
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 330px;
+      height: 250px;
     }
   }
 
@@ -253,37 +256,60 @@ button {
     .our-recipes-content {
       align-items: center;
       justify-content: space-evenly;
-      padding: 0 90px;
-      padding-bottom: 120px;
+      padding: 0;
+      padding-bottom: 100px;
       padding-top: 50px;
       gap: 85px;
       overflow: scroll;
 
       .our-recipes-content-carousel {
         ul.react-multi-carousel-track {
-          gap: 85px;
+          gap: 25px;
+
+          li {
+            /* width: 490px !important; */
+          }
+        }
+
+        li {
+          &:nth-child(1) {
+            .our-recipes-content-item {
+              background-color: #ffea55;
+
+              h6 {
+                color: #004772;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            .our-recipes-content-item {
+              background-color: #fdf3dc;
+
+              h6 {
+                color: #a7b804;
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            .our-recipes-content-item {
+              background-color: #a7b804;
+
+              h6 {
+                color: #fdf3dc;
+              }
+            }
+          }
         }
       }
 
       .our-recipes-content-item {
         height: 300px;
-        width: 600px;
         display: flex;
         position: relative;
         border-radius: 31px;
         padding: 35px;
-
-        &:nth-child(1) {
-          background-color: #ffea55;
-        }
-
-        &:nth-child(2) {
-          background-color: #fdf3dc;
-        }
-
-        &:nth-child(3) {
-          background-color: #a7b804;
-        }
 
         .our-recipes-content-item-img {
           width: 600px;
@@ -307,6 +333,7 @@ button {
           p {
             line-height: 24px;
             margin-bottom: 48px;
+            color: #004f4e;
           }
 
           button {
@@ -346,6 +373,7 @@ button {
         color: #004f4e;
         border-radius: 25px;
         width: 300px;
+        align-items: center;
 
         p {
           margin-bottom: 0;
@@ -399,6 +427,7 @@ button {
             color: #fdf3dc;
             text-transform: uppercase;
             font-weight: 300;
+            text-decoration: none;
           }
         }
       }
@@ -470,6 +499,10 @@ button {
           font-size: 41px;
         }
       }
+    }
+
+    .mobile-copyright-column {
+      display: none;
     }
   }
 }

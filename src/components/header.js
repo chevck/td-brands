@@ -33,30 +33,34 @@ export function Header() {
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
                 <a
-                  className={`nav-link ${
-                    path === "/our-wines" ? "active" : ""
-                  }`}
+                  className="nav-link"
+                  // className={`nav-link ${
+                  //   path === "/our-wines" ? "active" : ""
+                  // }`}
                   aria-current="page"
-                  href="/our-wines"
+                  href="#about-us"
                 >
                   About Us
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className={`nav-link ${path === "/story" ? "active" : ""}`}
-                  href="/story"
+                  className="nav-link"
+                  // className={`nav-link ${path === "/story" ? "active" : ""}`}
+                  // href="/story"
+                  href="#products-range"
                 >
                   Products
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className={`nav-link ${
-                    path === "/community" ? "active" : ""
-                  }`}
+                  className="nav-link"
+                  // className={`nav-link ${
+                  //   path === "/community" ? "active" : ""
+                  // }`}
                   aria-disabled="true"
-                  href="/community"
+                  href="#contact-us"
                 >
                   Contact Us
                 </a>
