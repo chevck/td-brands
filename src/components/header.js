@@ -11,7 +11,7 @@ export function Header() {
             <img
               src={Logo}
               // src="https://images.ctfassets.net/b9z5sch0zany/25WVUjt7s2Gx85s2ykwOgp/98b855fb6c7484ff845f102a9ca61d49/mangrove.svg"
-              alt="Mangroove Logo"
+              alt="Mangrove Logo"
               className="img-fluid"
             />
           </a>
@@ -73,7 +73,7 @@ export function Header() {
                   aria-disabled="true"
                   href="/community"
                 >
-                  Distributor
+                  Distributors
                 </a>
               </li>
             </ul>

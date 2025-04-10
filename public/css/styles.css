@@ -183,7 +183,7 @@ button {
     }
   }
 
-  .about-mangroove {
+  .about-mangrove {
     background-color: #f7eacc;
     position: relative;
     overflow-x: clip;
@@ -232,7 +232,7 @@ button {
       }
     }
 
-    .about-mangroove-block-2 {
+    .about-mangrove-block-2 {
       background-color: #ddcdaa;
       position: absolute;
       bottom: 0;
@@ -442,7 +442,7 @@ button {
       color: var(--secondary-color);
       width: 55%;
 
-      .mangroove-brand {
+      .mangrove-brand {
         position: absolute;
         bottom: 0;
         right: 0;

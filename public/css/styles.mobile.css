@@ -115,7 +115,7 @@
       }
     }
 
-    .about-mangroove {
+    .about-mangrove {
       h5 {
         font-size: 45px;
         line-height: 45px;
@@ -140,7 +140,7 @@
         }
       }
 
-      .about-mangroove-block-2 {
+      .about-mangrove-block-2 {
         height: 100px;
       }
     }
@@ -235,7 +235,7 @@
       }
 
       .bottom-footer,
-      .mangroove-brand {
+      .mangrove-brand {
         display: none !important;
       }
 

@@ -1,19 +1,19 @@
 {
-  "short_name": "Mangroove",
-  "name": "Mangroove",
+  "short_name": "mangrove",
+  "name": "mangrove",
   "icons": [
     {
-      "src": "mangroove-brand.ico",
+      "src": "mangrove-brand.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "mangroove-brand.png",
+      "src": "mangrove-brand.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "mangroove-brand.png",
+      "src": "mangrove-brand.png",
       "type": "image/png",
       "sizes": "512x512"
     }
