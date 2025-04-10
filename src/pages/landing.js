@@ -143,13 +143,12 @@ export function LandingPage() {
           <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              // autoPlay={true}
               autoPlaySpeed={1000}
+              autoPlay={true}
               centerMode={false}
               showDots={true}
               responsive={responsive}
               className="our-recipes-content-carousel"
-              // customDot={<CustomDot />}
             >
               {[1, 2, 3].map((_, key) => (
                 <div className="our-recipes-content-item" key={key}>
