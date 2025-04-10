@@ -1,0 +1,475 @@
+:root {
+  --primary-color: #f73b28;
+  --secondary-color: #fdf3dc;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+}
+
+.header-container {
+  background-color: var(--primary-color);
+  /* padding: 66px 66px 66px 112px; */
+  padding: 10px 50px 10px 80px;
+
+  .navbar {
+    .navbar-brand {
+      img {
+        width: 250px;
+        height: fit-content;
+      }
+    }
+
+    .menu-items {
+      ul {
+        margin-left: 90px;
+        gap: 35px;
+        li a {
+          color: var(--secondary-color);
+          font-size: 25px;
+          line-height: 31px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .social-media-icons {
+      ul {
+        li a {
+          i {
+            color: #fff;
+            font-size: 66px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.landing-page {
+  .hero-section {
+    background-image: url("../imgs/hero-img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 850px;
+    width: 100%;
+    overflow-x: clip;
+
+    .hero-section-content {
+      position: relative;
+      height: 100%;
+      .hero-section-img {
+        position: absolute;
+
+        &._left-leaves {
+          left: -600px;
+          top: -320px;
+          width: 1100px;
+        }
+
+        &._tomatoes {
+          left: -370px;
+          top: 300px;
+          width: 820px;
+        }
+
+        &._full-color-flavor {
+          left: 170px;
+          width: 850px;
+          top: 90px;
+          z-index: 1;
+        }
+        &._beans {
+          left: 865px;
+          top: 118px;
+          width: 180px;
+        }
+        &._leaves-right {
+          right: -470px;
+          top: -30px;
+          width: 900px;
+        }
+        &._corn {
+          right: -385px;
+          top: 150px;
+          width: 600px;
+        }
+      }
+
+      button {
+        display: flex;
+        padding: 10px 15px;
+        justify-content: space-between;
+        z-index: 1;
+        border-radius: 25px;
+        position: relative;
+        width: 315px;
+        height: 48px;
+        align-items: center;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        position: absolute;
+        bottom: 80px;
+        left: 27.5%;
+
+        p {
+          margin-bottom: 0;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .products-range {
+    background-color: var(--secondary-color);
+    height: fit-content;
+
+    h5 {
+      padding-top: 183px;
+      color: #004f4e;
+      font-size: 65px;
+      font-weight: 700;
+      line-height: 83spx;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0 90px;
+      margin-bottom: 60px;
+
+      img {
+        width: 15%;
+      }
+    }
+
+    .discover-more-btn {
+      display: flex;
+      justify-content: center;
+      button {
+        display: flex;
+        padding: 10px 25px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 100px;
+        border-radius: 25px;
+        width: 300px;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+
+        p {
+          margin-bottom: 0;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .about-mangroove {
+    background-color: #f7eacc;
+    position: relative;
+    overflow-x: clip;
+
+    h5 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 65px;
+      padding-top: 90px;
+      color: var(--primary-color);
+      margin-bottom: 35px;
+    }
+
+    h6 {
+      font-size: 25px;
+      text-align: center;
+      color: #004f4e;
+      width: 1066px;
+      margin: auto;
+      line-height: 30px;
+      margin-bottom: 36px;
+    }
+
+    img {
+      padding: 40px 8%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .side-img {
+      position: absolute;
+
+      &.peas {
+        top: -400px;
+        width: 1200px;
+        right: -530px;
+      }
+
+      &.pepper-nut {
+        top: -400px;
+        width: 1200px;
+        right: -530px;
+      }
+    }
+
+    .about-mangroove-block-2 {
+      background-color: #ddcdaa;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 330px;
+    }
+  }
+
+  .our-recipes {
+    background-color: #004f4e;
+
+    h5 {
+      padding-top: 76px;
+      color: #a7b804;
+      font-size: 65px;
+      font-weight: 700;
+      line-height: 83px;
+      text-align: center;
+    }
+
+    .our-recipes-content {
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0 90px;
+      padding-bottom: 120px;
+      padding-top: 50px;
+      gap: 85px;
+      overflow: scroll;
+
+      .our-recipes-content-carousel {
+        ul.react-multi-carousel-track {
+          gap: 85px;
+        }
+      }
+
+      .our-recipes-content-item {
+        height: 300px;
+        width: 600px;
+        display: flex;
+        position: relative;
+        border-radius: 31px;
+        padding: 35px;
+
+        &:nth-child(1) {
+          background-color: #ffea55;
+        }
+
+        &:nth-child(2) {
+          background-color: #fdf3dc;
+        }
+
+        &:nth-child(3) {
+          background-color: #a7b804;
+        }
+
+        .our-recipes-content-item-img {
+          width: 600px;
+
+          img {
+            width: 410px;
+            position: absolute;
+            left: 0;
+            top: 0px;
+          }
+        }
+
+        .our-recipes-content-item-text {
+          h6 {
+            color: #fff;
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 26px;
+          }
+
+          p {
+            line-height: 24px;
+            margin-bottom: 48px;
+          }
+
+          button {
+            display: flex;
+            height: 30px;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            padding: 7px 14px;
+            background-color: transparent;
+            border: 1px solid #004f4e;
+
+            p {
+              margin-bottom: 0;
+              text-transform: uppercase;
+            }
+
+            i {
+              color: #004f4e;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .more-recipes-btn-container {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 100px;
+
+      button {
+        display: flex;
+        padding: 10px 25px;
+        justify-content: space-between;
+        background-color: #a7b804;
+        color: #004f4e;
+        border-radius: 25px;
+        width: 300px;
+
+        p {
+          margin-bottom: 0;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 0.8fr 0.1fr 0.8fr 0.1fr 1.5fr;
+    padding: 50px 100px;
+    background-color: var(--primary-color);
+    position: relative;
+
+    .bottom-footer {
+      position: absolute;
+      bottom: 0;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .logo-column {
+      img {
+        width: 250px;
+        height: fit-content;
+      }
+    }
+
+    .height-line {
+      width: 1px;
+      height: 75%;
+      background: #fdf3dc;
+      margin-bottom: 25%;
+    }
+
+    .menu-column {
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 5px;
+          a {
+            color: #fdf3dc;
+            text-transform: uppercase;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .copyright-text {
+        color: var(--secondary-color);
+        font-weight: 200;
+      }
+    }
+
+    .newsletter-column {
+      color: var(--secondary-color);
+      width: 55%;
+
+      .mangroove-brand {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20%;
+      }
+
+      h5 {
+        font-weight: 900;
+        font-size: 25px;
+        margin-bottom: 4.5px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      input {
+        display: block;
+        margin-bottom: 15px;
+        height: 48px;
+        width: 100%;
+      }
+
+      button {
+        display: flex;
+        padding: 10px 25px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 25px;
+        width: 100%;
+        background: transparent;
+        color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        margin-bottom: 15px;
+
+        p {
+          margin-bottom: 0;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 300;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .social-media-icons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 0;
+        a {
+          color: #fff;
+          font-size: 41px;
+        }
+      }
+    }
+  }
+}
