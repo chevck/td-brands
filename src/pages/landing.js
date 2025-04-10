@@ -33,30 +33,6 @@ export function LandingPage() {
     },
   };
 
-  const CustomDot = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      index,
-      active,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
-    const carouselItems = [
-      <div className="dot-item">1</div>,
-      <div className="dot-item">2</div>,
-      <div className="dot-item">3</div>,
-    ];
-    // onMove means if dragging or swiping in progress.
-    // active is provided by this lib for checking if the item is active or not.
-    return (
-      <button
-        className={active ? "active" : "inactive"}
-        onClick={() => onClick()}
-      >
-        {React.Children.toArray(carouselItems)[index]}
-      </button>
-    );
-  };
-
   return (
     <div className="landing-page">
       <Header />
@@ -223,10 +199,10 @@ export function LandingPage() {
                 <a href="#contact-us">Contact Us</a>
               </li>
               <li>
-                <a>Privacy Policy</a>
+                <a href="#privacy-policy">Privacy Policy</a>
               </li>
               <li>
-                <a>Terms and Conditions</a>
+                <a href="#terms-and-conditions">Terms and Conditions</a>
               </li>
             </ul>
             <div className="copyright-text bottom-footer">
