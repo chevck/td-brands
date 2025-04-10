@@ -261,3 +261,51 @@
     }
   }
 }
+
+@media (min-width: 820px) and (max-width: 1025px) {
+  .landing-page {
+    .header-container {
+      padding-left: 30px;
+      .navbar {
+        .navbar-brand {
+          img {
+            width: 150px;
+          }
+        }
+        .menu-items ul {
+          gap: 15px;
+          margin-left: 50px;
+          li a {
+            font-size: 18px;
+          }
+        }
+
+        .social-media-icons {
+          ul li {
+            a i {
+              font-size: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .hero-section {
+      .hero-section-content {
+        .hero-section-img {
+          &._leaves-right,
+          &._corn,
+          &._beans {
+            display: none;
+          }
+
+          &._full-color-flavor {
+            left: 50px !important;
+            width: 650px !important;
+            top: 200px !important;
+          }
+        }
+      }
+    }
+  }
+}
