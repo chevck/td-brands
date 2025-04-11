@@ -63,7 +63,6 @@ export function LandingPage() {
               alt="Leaves Right"
             />
             <img className="hero-section-img _corn" src={Corn} alt="Corn" />
-
             <a href="/store-locator">
               <button>
                 <p>Where to Buy</p>
@@ -154,6 +153,7 @@ export function LandingPage() {
               showDots={true}
               responsive={responsive}
               className="our-recipes-content-carousel"
+              dotListClass="custom-dot-list-style"
             >
               {[1, 2, 3].map((_, key) => (
                 <div className="our-recipes-content-item" key={key}>

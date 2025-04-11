@@ -252,56 +252,63 @@
     }
   }
 
-  .footer {
-    display: flex;
-    flex-flow: column;
-    padding: 20px 30px;
-    gap: 15px;
+  .footer-container {
+    padding: 0;
+    .footer {
+      display: flex;
+      flex-flow: column;
+      padding: 20px 30px;
+      gap: 15px;
 
-    .logo-column {
-      img {
-        width: 200px;
+      .logo-column {
+        img {
+          width: 200px;
+        }
       }
-    }
 
-    .height-line {
-      display: none;
-    }
+      .height-line {
+        display: none;
+      }
 
-    .newsletter-column {
-      width: 100%;
+      .newsletter-column {
+        width: 100%;
 
-      button {
-        padding: 5px 25px;
+        button {
+          padding: 5px 25px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .bottom-footer,
+      .mangrove-brand {
+        display: none !important;
+      }
+
+      .mobile-copyright-column {
+        display: block;
+        margin-top: -20px;
+
         p {
-          font-size: 15px;
+          font-size: 13px;
+          color: var(--secondary-color);
+          font-weight: 200;
+        }
+
+        .social-media-icons {
+          display: flex;
+          gap: 10px;
+          a {
+            color: #fff;
+            font-size: 35px;
+          }
         }
       }
     }
 
-    .bottom-footer,
-    .mangrove-brand {
-      display: none !important;
-    }
-
-    .mobile-copyright-column {
-      display: block;
-      margin-top: -20px;
-
-      p {
-        font-size: 13px;
-        color: var(--secondary-color);
-        font-weight: 200;
-      }
-
-      .social-media-icons {
-        display: flex;
-        gap: 10px;
-        a {
-          color: #fff;
-          font-size: 35px;
-        }
-      }
+    .footer-bottom {
+      display: none;
     }
   }
 }
@@ -347,6 +354,37 @@
             left: 50px !important;
             width: 650px !important;
             top: 200px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .landing-page {
+    .hero-section {
+      .hero-section-content {
+        .hero-section-img {
+          &._beans {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .landing-page {
+    .hero-section {
+      .hero-section-content {
+        .hero-section-img {
+          &._leaves-right {
+            display: none;
+          }
+          &._corn {
+            display: none;
           }
         }
       }

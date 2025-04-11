@@ -219,12 +219,12 @@ export function StoreLocator() {
       });
       let stores = data.slice(0, 10);
       stores = formatStores(stores);
-      if (stores.length)
-        // trackEvent("Search Results Viewed", {
-        //   address: searchAddress,
-        //   results: stores.length,
-        // });
-        setStores(stores);
+      // if (stores.length)
+      // trackEvent("Search Results Viewed", {
+      //   address: searchAddress,
+      //   results: stores.length,
+      // });
+      setStores(stores);
       setLoading(false);
       setSearched(true);
     } catch (error) {

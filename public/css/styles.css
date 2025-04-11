@@ -18,6 +18,10 @@ button {
   }
 }
 
+.react-multi-carousel-list {
+  overflow-x: visible;
+}
+
 .header-container {
   background-color: var(--primary-color);
   /* padding: 66px 66px 66px 112px; */
@@ -63,7 +67,7 @@ button {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 850px;
+    height: 800px;
     width: 100%;
     overflow-x: clip;
 
@@ -75,8 +79,12 @@ button {
 
         &._left-leaves {
           left: -600px;
-          top: -320px;
+          top: -300px;
           width: 1100px;
+
+          /* width: calc(100% - 600px);
+          left: calc(-33%);
+          top: calc(-35%); */
         }
 
         &._tomatoes {
@@ -97,14 +105,14 @@ button {
           width: 180px;
         }
         &._leaves-right {
-          right: -470px;
+          right: -400px;
           top: -30px;
-          width: 900px;
+          width: 840px;
         }
         &._corn {
-          right: -385px;
+          right: -315px;
           top: 150px;
-          width: 600px;
+          width: 560px;
         }
       }
 
@@ -143,7 +151,7 @@ button {
     height: fit-content;
 
     h5 {
-      padding-top: 150px;
+      padding-top: 120px;
       color: #004f4e;
       font-size: 65px;
       font-weight: 700;
@@ -413,7 +421,7 @@ button {
       h1 {
         text-align: center;
         font-size: 55px;
-        font-weight: 600;
+        font-weight: 700;
         color: var(--primary-color);
         margin-bottom: 20px;
       }
@@ -463,6 +471,16 @@ button {
           border-radius: 999px;
           color: #fff;
           background-color: var(--primary-color);
+
+          &:disabled {
+            opacity: 0.2;
+          }
+
+          .loading .spinner-border {
+            width: 20px;
+            height: 20px;
+            color: #fff !important;
+          }
         }
       }
     }
@@ -613,119 +631,147 @@ button {
   }
 }
 
-.footer {
-  display: grid;
-  grid-template-columns: 0.8fr 0.1fr 0.8fr 0.1fr 1.5fr;
-  padding: 50px 100px;
+.footer-container {
   background-color: var(--primary-color);
+  padding: 50px 100px;
   position: relative;
 
-  .bottom-footer {
-    position: absolute;
-    bottom: 0;
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
+  .footer {
+    display: grid;
+    grid-template-columns: 0.8fr 0.1fr 0.8fr 0.1fr 1.5fr;
+    position: relative;
 
-  .logo-column {
-    img {
-      width: 250px;
-      height: fit-content;
+    .bottom-footer {
+      position: absolute;
+      bottom: 0;
+      font-size: 13px;
+      margin-bottom: 10px;
     }
-  }
 
-  .height-line {
-    width: 1px;
-    height: 75%;
-    background: #fdf3dc;
-    margin-bottom: 25%;
-  }
+    .logo-column {
+      img {
+        width: 250px;
+        height: fit-content;
+      }
+    }
 
-  .menu-column {
-    ul {
-      list-style: none;
-      padding-left: 0;
-      li {
-        margin-bottom: 5px;
-        a {
-          color: #fdf3dc;
+    .height-line {
+      width: 1px;
+      height: 75%;
+      background: #fdf3dc;
+      margin-bottom: 25%;
+    }
+
+    .menu-column {
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 5px;
+          a {
+            color: #fdf3dc;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .copyright-text {
+        color: var(--secondary-color);
+        font-weight: 200;
+      }
+    }
+
+    .newsletter-column {
+      color: var(--secondary-color);
+      width: 55%;
+
+      h5 {
+        font-weight: 900;
+        font-size: 25px;
+        margin-bottom: 4.5px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      input {
+        display: block;
+        margin-bottom: 15px;
+        height: 48px;
+        width: 100%;
+      }
+
+      button {
+        display: flex;
+        padding: 10px 25px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 25px;
+        width: 100%;
+        background: transparent;
+        color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        margin-bottom: 15px;
+
+        p {
+          margin-bottom: 0;
           text-transform: uppercase;
+          font-size: 20px;
           font-weight: 300;
-          text-decoration: none;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .social-media-icons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 0;
+        a {
+          color: #fff;
+          font-size: 41px;
         }
       }
     }
 
-    .copyright-text {
-      color: var(--secondary-color);
-      font-weight: 200;
+    .mobile-copyright-column {
+      display: none;
     }
   }
 
-  .newsletter-column {
+  .mangrove-brand {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 0.8fr 0.1fr 0.8fr 0.1fr 1.5fr;
     color: var(--secondary-color);
-    width: 55%;
-
-    .mangrove-brand {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 20%;
-    }
-
-    h5 {
-      font-weight: 900;
-      font-size: 25px;
-      margin-bottom: 4.5px;
-    }
+    padding-top: 30px;
+    align-items: center;
 
     p {
-      font-size: 15px;
-    }
-
-    input {
-      display: block;
-      margin-bottom: 15px;
-      height: 48px;
-      width: 100%;
-    }
-
-    button {
-      display: flex;
-      padding: 10px 25px;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 25px;
-      width: 100%;
-      background: transparent;
-      color: var(--secondary-color);
-      border: 1px solid var(--secondary-color);
-      margin-bottom: 15px;
-
-      p {
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-size: 20px;
-        font-weight: 300;
-      }
-
-      i {
-        font-size: 20px;
-      }
+      font-size: 12px;
+      margin-bottom: 0;
     }
 
     .social-media-icons {
       display: flex;
       gap: 10px;
       margin-bottom: 0;
-      a {
-        color: #fff;
-        font-size: 41px;
+
+      a i {
+        font-size: 35px;
+        color: var(--secondary-color);
       }
     }
-  }
-
-  .mobile-copyright-column {
-    display: none;
   }
 }
