@@ -27,6 +27,8 @@ export function StoreLocator() {
   const map = useRef(null);
   const inputRef = useRef();
 
+  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
+
   const { latitude, longitude } = localStorage.getItem("ajs_user_traits")
     ? JSON.parse(localStorage.getItem("ajs_user_traits"))
     : {
