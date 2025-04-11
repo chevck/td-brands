@@ -8,8 +8,6 @@ import { getDistanceInMiles, getDistanceInKm } from "../utils/index";
 import { handleAppError } from "../utils/error-handler";
 import { Footer } from "../components/footer";
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
-
 export function StoreLocator() {
   const [searching, setSearching] = useState(false);
   const [searchAddress, setSearchAddress] = useState("");
