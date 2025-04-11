@@ -1,40 +1,39 @@
 @media only screen and (max-width: 600px) {
-  .landing-page {
-    .header-container {
-      padding: 0px 20px;
+  .header-container {
+    padding: 0px 20px;
 
-      .navbar {
-        .navbar-brand {
-          img {
-            width: 150px;
+    .navbar {
+      .navbar-brand {
+        img {
+          width: 150px;
+        }
+      }
+
+      .menu-items {
+        ul {
+          text-align: center;
+          gap: 10px;
+          margin-left: 0;
+
+          li a {
+            font-size: 18px;
+            line-height: 17px;
           }
         }
+      }
 
-        .menu-items {
-          ul {
-            text-align: center;
-            gap: 10px;
-            margin-left: 0;
+      .social-media-icons {
+        ul li {
+          text-align: center;
 
-            li a {
-              font-size: 18px;
-              line-height: 17px;
-            }
-          }
-        }
-
-        .social-media-icons {
-          ul li {
-            text-align: center;
-
-            a i {
-              font-size: 45px;
-            }
+          a i {
+            font-size: 45px;
           }
         }
       }
     }
-
+  }
+  .landing-page {
     .hero-section {
       height: 400px;
       .hero-section-content {
@@ -206,56 +205,101 @@
         }
       }
     }
+  }
 
-    .footer {
-      display: flex;
-      flex-flow: column;
-      padding: 20px 30px;
-      gap: 15px;
-
-      .logo-column {
-        img {
-          width: 200px;
-        }
-      }
-
-      .height-line {
-        display: none;
-      }
-
-      .newsletter-column {
-        width: 100%;
-
-        button {
-          padding: 5px 25px;
-          p {
-            font-size: 15px;
-          }
-        }
-      }
-
-      .bottom-footer,
-      .mangrove-brand {
-        display: none !important;
-      }
-
-      .mobile-copyright-column {
-        display: block;
-        margin-top: -20px;
-
-        p {
-          font-size: 13px;
-          color: var(--secondary-color);
-          font-weight: 200;
+  .store-locator {
+    .store-locator-container {
+      .store-locator-header {
+        height: 280px;
+        h1 {
+          font-size: 34px;
         }
 
-        .social-media-icons {
-          display: flex;
+        .store-locator-header_search-container {
+          flex-flow: column;
           gap: 10px;
-          a {
-            color: #fff;
-            font-size: 35px;
+
+          .store-locator-header_search-container_form-group {
+            width: 100%;
           }
+
+          button {
+            height: 45px;
+            &:disabled {
+              opacity: 0.1;
+              cursor: not-allowed;
+            }
+            .loading .spinner-border {
+              width: 20px;
+              height: 20px;
+              color: #fff !important;
+            }
+          }
+        }
+      }
+
+      .store-locator-content {
+        .row {
+          flex-direction: column-reverse;
+
+          .store-locator-content_map {
+            .map-wrapper #map {
+              height: 200px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: column;
+    padding: 20px 30px;
+    gap: 15px;
+
+    .logo-column {
+      img {
+        width: 200px;
+      }
+    }
+
+    .height-line {
+      display: none;
+    }
+
+    .newsletter-column {
+      width: 100%;
+
+      button {
+        padding: 5px 25px;
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .bottom-footer,
+    .mangrove-brand {
+      display: none !important;
+    }
+
+    .mobile-copyright-column {
+      display: block;
+      margin-top: -20px;
+
+      p {
+        font-size: 13px;
+        color: var(--secondary-color);
+        font-weight: 200;
+      }
+
+      .social-media-icons {
+        display: flex;
+        gap: 10px;
+        a {
+          color: #fff;
+          font-size: 35px;
         }
       }
     }
