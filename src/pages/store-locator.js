@@ -11,7 +11,7 @@ import { Footer } from "../components/footer";
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
 export function StoreLocator() {
-  const [searching, setSearching] = useState(true);
+  const [searching, setSearching] = useState(false);
   const [searchAddress, setSearchAddress] = useState("");
   const [stores, setStores] = useState([]);
   const [searched, setSearched] = useState(false);
