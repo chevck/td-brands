@@ -147,15 +147,17 @@ export function LandingPage() {
           <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              autoPlaySpeed={1000}
+              autoPlaySpeed={5000}
               autoPlay={true}
               centerMode={false}
               showDots={true}
               responsive={responsive}
               className="our-recipes-content-carousel"
               dotListClass="custom-dot-list-style"
+              renderDotsOutside={true}
+              infinite={true}
             >
-              {[1, 2, 3].map((_, key) => (
+              {[1, 2, 3, 4, 5, 6].map((_, key) => (
                 <div className="our-recipes-content-item" key={key}>
                   <div className="our-recipes-content-item-img">
                     <img

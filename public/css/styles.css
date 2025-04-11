@@ -272,6 +272,7 @@ button {
     }
 
     .our-recipes-content {
+      position: relative;
       align-items: center;
       justify-content: space-evenly;
       padding: 0;
@@ -280,16 +281,37 @@ button {
       gap: 85px;
       overflow: scroll;
 
+      .custom-dot-list-style {
+        bottom: 35px;
+
+        button {
+          width: 18px;
+          height: 18px;
+          border: 3px solid #a7b804;
+          background-color: transparent;
+        }
+
+        .react-multi-carousel-dot--active {
+          button {
+            background-color: #a7b804;
+          }
+        }
+      }
+
       .our-recipes-content-carousel {
         ul.react-multi-carousel-track {
           gap: 25px;
-
-          li {
-            /* width: 490px !important; */
-          }
         }
 
         li {
+          .our-recipes-content-item {
+            background-color: #ffea55;
+
+            h6 {
+              color: #004772;
+            }
+          }
+
           &:nth-child(1) {
             .our-recipes-content-item {
               background-color: #ffea55;

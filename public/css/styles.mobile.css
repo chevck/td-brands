@@ -96,6 +96,8 @@
       .products {
         flex-wrap: wrap;
         row-gap: 25px;
+        margin-bottom: 30px;
+        flex-flow: wrap-reverse;
 
         img {
           width: 50%;
@@ -153,6 +155,10 @@
         padding-bottom: 50px;
         padding-top: 20px;
 
+        .custom-dot-list-style {
+          bottom: 13px;
+        }
+
         .our-recipes-content-carousel {
           ul {
             li {
@@ -181,7 +187,7 @@
           .our-recipes-content-item-text {
             h6 {
               font-size: 35px;
-              margin-bottom: 17px;
+              margin-bottom: 10px;
             }
             p {
               margin-bottom: 19px;
@@ -191,6 +197,10 @@
             button {
               width: 165px;
               font-size: 14px;
+
+              p {
+                margin-bottom: 0;
+              }
             }
           }
         }
