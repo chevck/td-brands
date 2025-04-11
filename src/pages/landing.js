@@ -82,9 +82,6 @@ export function LandingPage() {
             <div className="products">
               <img
                 src={MangroveSweetCorn}
-                // src={
-                //   "https://images.ctfassets.net/b9z5sch0zany/3pUvzr8arIvZJUxlCUqx5n/413fd68f4d8202b006140633fa7d682f/MANGROVE_CAN_SWEETCORN__2_.png"
-                // }
                 alt="sweet corn"
                 className="img-fluid"
               />
@@ -102,14 +99,7 @@ export function LandingPage() {
                 alt="baked beans"
                 className="img-fluid"
               />
-              <img
-                src={MangroveGreenPeas}
-                // src={
-                //   "https://images.ctfassets.net/b9z5sch0zany/10FxFA3doGziGZtRDvMJ0j/926811c4ecaeb06e53d123499b58d501/MANGROVE_CAN_PEAS.png"
-                // }
-                alt="peas"
-                className="img-fluid"
-              />
+              <img src={MangroveGreenPeas} alt="peas" className="img-fluid" />
               <img
                 src={
                   "https://images.ctfassets.net/b9z5sch0zany/4ksgBaRv2XA0THoABxBGU5/5974040fea3caea221d21d45d78cab0d/MANGROVE_CAN_MACKEREL.png"

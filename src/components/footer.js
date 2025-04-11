@@ -1,5 +1,6 @@
 import MangroveLogo from "../assets/mangroove-logo.svg";
 import MangroveBrand from "../assets/mangroove-brand.svg";
+import { trackEvent } from "../utils/segment";
 
 export function Footer() {
   return (
@@ -12,10 +13,20 @@ export function Footer() {
         <div className="menu-column">
           <ul>
             <li>
-              <a href="#about-us">About Us</a>
+              <a
+                href="#about-us"
+                onClick={() => trackEvent("Clicked About Us")}
+              >
+                About Us
+              </a>
             </li>
             <li>
-              <a href="#products-range">products</a>
+              <a
+                href="#products-range"
+                onClick={() => trackEvent("Clicked Products")}
+              >
+                products
+              </a>
             </li>
             <li>
               <a href="#contact-us">Contact Us</a>

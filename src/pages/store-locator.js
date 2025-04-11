@@ -382,7 +382,7 @@ export function StoreLocator() {
                         <Loading />
                       ) : !loading && searched && !stores.length ? (
                         <>
-                          <h5>No results found</h5>
+                          <h5>No stores found</h5>
                           <p>Please try a different address</p>
                         </>
                       ) : (

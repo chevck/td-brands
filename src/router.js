@@ -3,11 +3,11 @@ import { LandingPage } from "./pages/landing";
 import "react-multi-carousel/lib/styles.css";
 import { StoreLocator } from "./pages/store-locator";
 import { useEffect } from "react";
-// import { initializeSegment } from "./utils/segment";
+import { initializeSegment } from "./utils/segment";
 
 export default function AppRouter() {
   useEffect(() => {
-    // initializeSegment();
+    initializeSegment();
   }, []);
 
   return (
