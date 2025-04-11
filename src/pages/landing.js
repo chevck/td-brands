@@ -12,8 +12,9 @@ import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
 import JollofPlate from "../assets/jollof-plate.png";
 import Carousel from "react-multi-carousel";
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer } from "../components/footer";
+import { trackPageView } from "../utils/segment";
 
 export function LandingPage() {
   const responsive = {
@@ -33,6 +34,10 @@ export function LandingPage() {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+  useEffect(() => {
+    trackPageView("Viewed Landing Page");
+  }, []);
 
   return (
     <div className="landing-page">

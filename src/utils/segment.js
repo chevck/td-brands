@@ -1,12 +1,9 @@
 import { AnalyticsBrowser } from "@segment/analytics-next";
-import {
-  generateUniqueId,
-  // getUserAddress
-} from ".";
+import { generateUniqueId } from ".";
 import { handleAppError } from "./error-handler";
 
 export const analytics = new AnalyticsBrowser();
-const brandPage = "amabile";
+const brandPage = "mangrove";
 
 export const initializeSegment = async () => {
   try {
@@ -21,15 +18,9 @@ export const initializeSegment = async () => {
     );
     const { ...rest } = await response.json();
 
-    // console.log({ city, region, country, ip, loc });
-
     if (userId) return; // if there is a user initialized, return ::: this is to prevent multiple initializations
     userId = generateUniqueId();
     localStorage.setItem("ajs_user_id", userId);
-
-    // return;
-
-    // const { fullAddress, ...rest } = await getUserAddress();
     identifyUser(userId, {
       timestamp: new Date().toISOString(),
       device: window.navigator.userAgent,

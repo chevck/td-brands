@@ -1,8 +1,7 @@
 import Logo from "../assets/mangroove-logo.svg";
+import { trackEvent } from "../utils/segment";
 
 export function Header() {
-  const path = window.location.pathname;
-
   return (
     <div className="header-container">
       <nav className="navbar navbar-expand-lg">
@@ -29,11 +28,9 @@ export function Header() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  // className={`nav-link ${
-                  //   path === "/our-wines" ? "active" : ""
-                  // }`}
                   aria-current="page"
                   href="#about-us"
+                  onClick={() => trackEvent("Clicked About Us")}
                 >
                   About Us
                 </a>
@@ -41,9 +38,8 @@ export function Header() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  // className={`nav-link ${path === "/story" ? "active" : ""}`}
-                  // href="/story"
                   href="#products-range"
+                  onClick={() => trackEvent("Clicked Products")}
                 >
                   Products
                 </a>
@@ -51,22 +47,21 @@ export function Header() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  // className={`nav-link ${
-                  //   path === "/community" ? "active" : ""
-                  // }`}
                   aria-disabled="true"
                   href="#contact-us"
+                  onClick={() => trackEvent("Clicked Contact Us")}
                 >
                   Contact Us
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className={`nav-link ${
-                    path === "/community" ? "active" : ""
-                  }`}
+                  className={`nav-link`}
                   aria-disabled="true"
-                  href="/community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://jqoccrubqqe.typeform.com/to/FiB785Ts"
+                  onClick={() => trackEvent("Clicked Distributors Typeform")}
                 >
                   Distributors
                 </a>

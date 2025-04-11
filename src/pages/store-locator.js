@@ -309,7 +309,7 @@ export function StoreLocator() {
       <div className="store-locator-container">
         <div className="">
           <div className="store-locator-header">
-            <h1>Find Mangrove Foods near you</h1>
+            <h1>Find us in a store near you</h1>
             <div className="store-locator-header_search-container">
               <div className="store-locator-header_search-container_form-group">
                 <input
