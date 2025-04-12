@@ -1,6 +1,5 @@
 import Logo from "../assets/mangroove-logo.svg";
 import { trackEvent } from "../utils/segment";
-
 export function Header() {
   return (
     <div className="header-container">
@@ -60,7 +59,7 @@ export function Header() {
                   aria-disabled="true"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://jqoccrubqqe.typeform.com/to/FiB785Ts"
+                  href="https://form.typeform.com/to/aRzLhKrv"
                   onClick={() => trackEvent("Clicked Distributors Typeform")}
                 >
                   Distributors
