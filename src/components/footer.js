@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <div className="footer-container">
       <div className="footer">
-        <div className="logo-column">
+        <div className="logo-column" onClick={() => window.location.href("/")}>
           <img src={MangroveLogo} alt="Mangrove Logo" />
         </div>
         <div className="height-line" />
@@ -62,10 +62,18 @@ export function Footer() {
             RESERVED
           </p>
           <div className="social-media-icons">
-            <a href="https://www.facebook.com/mangrovefoods">
+            <a
+              href="https://www.facebook.com/mangrovefoods"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/mangrovefoods">
+            <a
+              href="https://www.instagram.com/mangrovefoods"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-instagram"></i>
             </a>
           </div>
@@ -86,10 +94,18 @@ export function Footer() {
         </p>
         <div />
         <div className="social-media-icons">
-          <a href="https://www.facebook.com/mangrovefoods">
+          <a
+            href="https://www.facebook.com/mangrovefoods"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="bi bi-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/mangrovefoods">
+          <a
+            href="https://www.instagram.com/mangrovefoods"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="bi bi-instagram"></i>
           </a>
         </div>

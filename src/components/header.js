@@ -73,7 +73,11 @@ export function Header() {
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a href="instagram.com">
+                <a
+                  href="instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="bi bi-instagram"></i>
                 </a>
               </li>

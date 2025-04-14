@@ -29,6 +29,7 @@ button {
 
   .navbar {
     .navbar-brand {
+      cursor: pointer;
       img {
         width: 250px;
         height: fit-content;
