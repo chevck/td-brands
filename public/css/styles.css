@@ -26,6 +26,8 @@ button {
   background-color: var(--primary-color);
   /* padding: 66px 66px 66px 112px; */
   padding: 0px 50px 0px 80px;
+  position: relative;
+  z-index: 2;
 
   .navbar {
     .navbar-brand {
@@ -679,7 +681,7 @@ button {
 
     .height-line {
       width: 1px;
-      height: 75%;
+      height: 63%;
       background: #fdf3dc;
       margin-bottom: 25%;
     }
@@ -707,7 +709,7 @@ button {
 
     .newsletter-column {
       color: var(--secondary-color);
-      width: 55%;
+      width: 60%;
 
       h5 {
         font-weight: 900;
