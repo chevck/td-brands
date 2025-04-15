@@ -111,9 +111,12 @@ export function StoreLocator() {
             latitude: location.lat(),
             longitude: location.lng(),
           };
-          const { long_name: city } = address_components.find((el) =>
-            el.types.includes("locality")
-          );
+          let city;
+          if (address_components.find((el) => el.types.includes("locality"))) {
+            city = address_components.find((el) =>
+              el.types.includes("locality")
+            ).long_name;
+          }
           let subcity = null;
           if (
             address_components.find((el) => el.types.includes("sublocality"))
@@ -304,17 +307,17 @@ export function StoreLocator() {
   };
 
   return (
-    <div className="store-locator">
+    <div className='store-locator'>
       <Header />
-      <div className="store-locator-container">
-        <div className="">
-          <div className="store-locator-header">
+      <div className='store-locator-container'>
+        <div className=''>
+          <div className='store-locator-header'>
             <h1>Find us in a store near you</h1>
-            <div className="store-locator-header_search-container">
-              <div className="store-locator-header_search-container_form-group">
+            <div className='store-locator-header_search-container'>
+              <div className='store-locator-header_search-container_form-group'>
                 <input
-                  type="text"
-                  placeholder="Enter your city or zipcode"
+                  type='text'
+                  placeholder='Enter your city or zipcode'
                   ref={inputRef}
                   onChange={({ target: { value } }) => {
                     if (!searching) setSearching(true);
@@ -335,7 +338,7 @@ export function StoreLocator() {
                     }}
                   ></i>
                 ) : (
-                  <i className="bi bi-crosshair2"></i>
+                  <i className='bi bi-crosshair2'></i>
                 )}
               </div>
               <button
@@ -346,12 +349,12 @@ export function StoreLocator() {
               </button>
             </div>
           </div>
-          <div className="store-locator-content">
-            <div className="row">
-              <div className="col-md-3 col-12">
-                <div className="store-locator-content_stores">
+          <div className='store-locator-content'>
+            <div className='row'>
+              <div className='col-md-3 col-12'>
+                <div className='store-locator-content_stores'>
                   {stores.length && !loading ? (
-                    <div className="header-section">
+                    <div className='header-section'>
                       <p>
                         Showing{" "}
                         {!pagination.page
@@ -365,19 +368,19 @@ export function StoreLocator() {
                         of {pagination.total}
                       </p>
                       <select
-                        className="distance-type-select"
+                        className='distance-type-select'
                         onChange={({ target: { value } }) =>
                           changeDistanceType(value)
                         }
                         value={distanceType}
                       >
-                        <option value="km">(km)</option>
-                        <option value="mi">(mi)</option>
+                        <option value='km'>(km)</option>
+                        <option value='mi'>(mi)</option>
                       </select>
                     </div>
                   ) : null}
                   {!stores.length || loading ? (
-                    <div className="no-results">
+                    <div className='no-results'>
                       {loading ? (
                         <Loading />
                       ) : !loading && searched && !stores.length ? (
@@ -387,7 +390,7 @@ export function StoreLocator() {
                         </>
                       ) : (
                         <>
-                          <i className="bi bi-search"></i>
+                          <i className='bi bi-search'></i>
                           <h5>Please enter an address</h5>
                           <p>
                             We'll search for stores near you based on your
@@ -397,16 +400,16 @@ export function StoreLocator() {
                       )}
                     </div>
                   ) : (
-                    <div className="store-list" id="store-list">
+                    <div className='store-list' id='store-list'>
                       {stores.map((store, key) => (
                         <div
                           key={key}
-                          className="item"
+                          className='item'
                           onClick={() => zoomAStore(store)}
                         >
                           <h5>{store.storeName}</h5>
                           <h6>{store.address}</h6>
-                          <div className="distance">
+                          <div className='distance'>
                             <p>
                               {store.distance ? (
                                 <>
@@ -418,7 +421,7 @@ export function StoreLocator() {
                             </p>
                             <button onClick={() => viewAStore(store)}>
                               <p>Directions</p>
-                              <i className="bi bi-chevron-right"></i>
+                              <i className='bi bi-chevron-right'></i>
                             </button>
                           </div>
                         </div>
@@ -426,10 +429,10 @@ export function StoreLocator() {
                     </div>
                   )}
                   {searchResults.length > 10 && !loading && (
-                    <div className="pagination-container">
+                    <div className='pagination-container'>
                       <ReactPaginate
-                        breakLabel="..."
-                        nextLabel=">"
+                        breakLabel='...'
+                        nextLabel='>'
                         onPageChange={({ selected: page }) =>
                           handlePageChange(page)
                         }
@@ -439,18 +442,18 @@ export function StoreLocator() {
                           searchResults.length / pagination.pageSize
                         )}
                         forcePage={pagination.page}
-                        previousLabel="<"
+                        previousLabel='<'
                         renderOnZeroPageCount={null}
                       />
                     </div>
                   )}
                 </div>
               </div>
-              <div className="col-md-9 col-12">
-                <div className="store-locator-content_map">
-                  <div className="map-wrapper">
+              <div className='col-md-9 col-12'>
+                <div className='store-locator-content_map'>
+                  <div className='map-wrapper'>
                     <div
-                      id="map"
+                      id='map'
                       ref={mapContainer}
                       style={{
                         width: "100%",
@@ -462,7 +465,7 @@ export function StoreLocator() {
                 </div>
               </div>
             </div>
-            <div className="store-locator-content_map"></div>
+            <div className='store-locator-content_map'></div>
           </div>
         </div>
       </div>
