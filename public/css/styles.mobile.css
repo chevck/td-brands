@@ -388,13 +388,24 @@
 @media (max-width: 1700px) {
   .landing-page {
     .hero-section {
+      height: 650px;
       .hero-section-content {
         .hero-section-img {
+          &._full-color-flavor {
+            width: 700px;
+          }
+          &._left-leaves {
+            width: 1000px;
+          }
+          &._tomatoes {
+            left: -320px;
+            width: 700px;
+          }
           &._leaves-right {
-            display: none;
+            width: 740px;
           }
           &._corn {
-            display: none;
+            width: 510px;
           }
         }
       }
