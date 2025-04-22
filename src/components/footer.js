@@ -1,8 +1,23 @@
 import MangroveLogo from "../assets/mangroove-logo.svg";
 import MangroveBrand from "../assets/mangroove-brand.svg";
 import { trackEvent } from "../utils/segment";
+import { useState } from "react";
 
 export function Footer() {
+  const [emailAddress, setEmailAddress] = useState("");
+
+  const isEmailValid = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubscribeUser = () => {
+    console.log({ emailAddress });
+    if (!isEmailValid(emailAddress)) return "Invalid Email Address";
+    // save to segment
+    // trackEvent("Email Subscription", { emailAddress });
+  };
+
   return (
     <div className="footer-container">
       <div className="footer">
@@ -29,13 +44,13 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="#contact-us">Contact Us</a>
+              <a href="mailto:media@mangrovefoods.com">Contact Us</a>
             </li>
             <li>
-              <a href="#privacy-policy">Privacy Policy</a>
+              <a href="/privacy-terms?page=privacy">Privacy Policy</a>
             </li>
             <li>
-              <a href="#terms-and-conditions">Terms and Conditions</a>
+              <a href="/privacy-terms?page=terms">Terms and Conditions</a>
             </li>
           </ul>
         </div>
@@ -50,8 +65,9 @@ export function Footer() {
             className="form-control"
             type="text"
             placeholder="Enter your email"
+            onChange={({ target: { value } }) => setEmailAddress(value)}
           />
-          <button>
+          <button onClick={handleSubscribeUser}>
             <p>Subscribe</p>
             <i className="bi bi-chevron-right"></i>
           </button>
@@ -107,6 +123,13 @@ export function Footer() {
             rel="noopener noreferrer"
           >
             <i className="bi bi-instagram"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/mangrovefoods"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bi bi-tiktok"></i>
           </a>
         </div>
         <div />

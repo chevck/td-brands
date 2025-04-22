@@ -47,7 +47,7 @@ export function Header() {
                 <a
                   className="nav-link"
                   aria-disabled="true"
-                  href="#contact-us"
+                  href="mailto:media@mangrovefoods.com"
                   onClick={() => trackEvent("Clicked Contact Us")}
                 >
                   Contact Us

@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { StoreLocator } from "./pages/store-locator";
 import { useEffect } from "react";
 import { initializeSegment } from "./utils/segment";
+import { PrivacyPolicyPage } from "./pages/privacy";
 
 export default function AppRouter() {
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/store-locator" element={<StoreLocator />} />
+        <Route path="/privacy-terms" element={<PrivacyPolicyPage />} />
       </Routes>
     </BrowserRouter>
   );

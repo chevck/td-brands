@@ -109,10 +109,10 @@ export function LandingPage() {
               />
             </div>
             <div className="discover-more-btn">
-              <button>
+              {/* <button>
                 <p>Discover More</p>
                 <i className="bi bi-chevron-right"></i>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -145,12 +145,14 @@ export function LandingPage() {
               autoPlaySpeed={5000}
               autoPlay={true}
               centerMode={false}
+              draggable={true}
+              keyBoardControl={true}
               showDots={true}
               responsive={responsive}
               className="our-recipes-content-carousel"
               dotListClass="custom-dot-list-style"
               renderDotsOutside={true}
-              infinite={true}
+              // infinite={true}
             >
               {[1, 2, 3, 4, 5, 6].map((_, key) => (
                 <div className="our-recipes-content-item" key={key}>
