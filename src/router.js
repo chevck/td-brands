@@ -5,6 +5,7 @@ import { StoreLocator } from "./pages/store-locator";
 import { useEffect } from "react";
 import { initializeSegment } from "./utils/segment";
 import { PrivacyPolicyPage } from "./pages/privacy";
+import { Recipes } from "./pages/recipes";
 
 export default function AppRouter() {
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function AppRouter() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/store-locator" element={<StoreLocator />} />
         <Route path="/privacy-terms" element={<PrivacyPolicyPage />} />
+        <Route path="/recipes" element={<Recipes />} />
       </Routes>
     </BrowserRouter>
   );

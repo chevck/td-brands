@@ -726,6 +726,104 @@ button {
   }
 }
 
+.recipes {
+  .recipes-container {
+    background-color: #fdf3dc;
+    height: 100%;
+    padding: 50px 100px;
+
+    .page-title {
+      text-align: center;
+      font-size: 58px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    ul.recipe-categories {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      justify-content: center;
+
+      li {
+        background-color: #fff;
+        padding: 5px 15px;
+        border-radius: 999px;
+        min-width: 90px;
+        text-align: center;
+        cursor: pointer;
+
+        &.active {
+          color: #004f4e;
+          font-weight: bolder;
+        }
+      }
+    }
+
+    .recipes-flex {
+      display: flex;
+      margin-top: 200px;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      row-gap: 200px;
+
+      .recipe-box {
+        flex-basis: 400px;
+        position: relative;
+        width: 400px;
+        min-height: 400px;
+        background-color: #ddcdaa;
+        border-radius: 30px;
+
+        .recipe-box-img {
+          position: absolute;
+          top: -200px;
+
+          &.fish {
+            width: 400px;
+            padding: 55px;
+          }
+        }
+
+        h3 {
+          margin-top: 170px;
+          text-align: center;
+          font-weight: 700;
+          color: #004f4e;
+          margin-bottom: 20px;
+        }
+
+        ul {
+          list-style: none;
+          li {
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: #004f4e;
+          }
+        }
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 200px;
+          height: 40px;
+          margin: auto;
+          gap: 5px;
+          background-color: transparent;
+          border: 1px solid #004f4e;
+          margin-bottom: 20px;
+          color: #004f4e;
+
+          i {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .footer-container {
   background-color: var(--primary-color);
   padding: 50px 100px;

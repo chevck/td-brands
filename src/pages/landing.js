@@ -179,7 +179,10 @@ export function LandingPage() {
             </Carousel>
           </div>
           <div className="more-recipes-btn-container">
-            <button className="more-recipes-btn">
+            <button
+              className="more-recipes-btn"
+              onClick={() => (window.location.href = "/recipes")}
+            >
               <p>More Recipes</p>
               <i className="bi bi-chevron-right"></i>
             </button>
