@@ -4,6 +4,7 @@ import { trackEvent } from "../utils/segment";
 import { useState } from "react";
 
 export function Footer() {
+  const isOnHomePage = window.location.href === "/";
   const [emailAddress, setEmailAddress] = useState("");
 
   const isEmailValid = (email) => {
