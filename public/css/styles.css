@@ -302,11 +302,13 @@ button {
       }
 
       .our-recipes-content-carousel {
+        margin-left: 20px;
         ul.react-multi-carousel-track {
-          gap: 25px;
+          gap: 15px;
         }
 
         li {
+          width: 100% !important;
           .our-recipes-content-item {
             background-color: #ffea55;
 
@@ -353,6 +355,7 @@ button {
         position: relative;
         border-radius: 31px;
         padding: 35px;
+        max-width: 600px;
 
         .our-recipes-content-item-img {
           width: 600px;
@@ -365,6 +368,7 @@ button {
         }
 
         .our-recipes-content-item-text {
+          z-index: 2;
           h6 {
             color: #fff;
             font-size: 45px;
@@ -649,6 +653,75 @@ button {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.privacy-policy-container {
+  background-color: #fdf3dc;
+  height: 100%;
+  padding: 50px 100px;
+
+  ul.nav {
+    border-bottom: 1px solid #ddcdaa;
+    gap: 30px;
+    cursor: pointer;
+
+    li a {
+      font-size: 20px;
+      color: #ddcdaa;
+
+      &.active {
+        color: #f23c28;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 35px;
+
+    h3 {
+      font-weight: 700;
+      font-size: 33px;
+      margin-bottom: 15px;
+      color: #f23c28;
+    }
+
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .point {
+      margin-top: 25px;
+    }
+
+    ul {
+      list-style-type: none;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .point-block {
+      background-color: #ddcdaa;
+      padding: 24px;
+      margin-top: 44px;
+      margin-bottom: 96px;
+      border-radius: 8px;
+      color: #fdf3dc;
+
+      .holder {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fdf3dc;
+
+        a {
+          color: #fdf3dc;
+          margin-bottom: 2px;
         }
       }
     }
