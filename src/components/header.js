@@ -1,6 +1,7 @@
 import Logo from "../assets/mangroove-logo.svg";
 import { trackEvent } from "../utils/segment";
 export function Header() {
+  const isOnHomePage = window.location.href === "/";
   return (
     <div className="header-container">
       <nav className="navbar navbar-expand-lg">
@@ -28,7 +29,7 @@ export function Header() {
                 <a
                   className="nav-link"
                   aria-current="page"
-                  href="#about-us"
+                  href={isOnHomePage ? "#about-us" : "/about-us"}
                   onClick={() => trackEvent("Clicked About Us")}
                 >
                   About Us
