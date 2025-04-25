@@ -383,6 +383,23 @@
       }
     }
   }
+
+  .recipes {
+    .hero-block {
+      overflow-x: hidden;
+      padding: 100px;
+
+      img {
+        right: -9%;
+        width: 75%;
+      }
+    }
+    .recipes-container {
+      .recipes-flex-2 {
+        justify-content: center;
+      }
+    }
+  }
 }
 
 @media (max-width: 1700px) {
