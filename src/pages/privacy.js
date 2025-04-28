@@ -119,7 +119,7 @@ function TermsOfUsePage() {
         <h4>Intellectual Property</h4>
         <p>
           All content, features, and functionality of this website are owned by
-          Amabile di Rosa and are protected by international copyright,
+          Mangrove Foods and are protected by international copyright,
           trademark, and other intellectual property laws.
         </p>
       </div>
@@ -136,7 +136,7 @@ function TermsOfUsePage() {
         <h4>Disclaimer</h4>
         <p>
           The website is provided "as is" without any warranties, expressed or
-          implied. Amabile di Rosa does not warrant that the website will be
+          implied. Mangrove Foods does not warrant that the website will be
           error-free or uninterrupted.
         </p>
       </div>

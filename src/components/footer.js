@@ -12,10 +12,9 @@ export function Footer() {
   };
 
   const handleSubscribeUser = () => {
-    console.log({ emailAddress });
     if (!isEmailValid(emailAddress)) return "Invalid Email Address";
     // save to segment
-    // trackEvent("Email Subscription", { emailAddress });
+    trackEvent("Email Subscription", { emailAddress });
   };
 
   return (
