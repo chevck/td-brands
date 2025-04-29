@@ -296,6 +296,9 @@
       }
     }
   }
+  .privacy-policy-container {
+    padding: 50px 30px;
+  }
   .footer-container {
     padding: 0;
     .footer {
