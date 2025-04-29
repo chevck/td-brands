@@ -216,7 +216,42 @@
       }
     }
   }
+  .recipes {
+    .hero-block {
+      padding: 30px;
 
+      .content {
+        z-index: 1;
+        width: 67%;
+        h3 {
+          font-size: 45px;
+          width: 100%;
+        }
+
+        h6 {
+          width: 100%;
+        }
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+
+      img {
+        right: -60px;
+        width: 267px;
+        bottom: 0;
+      }
+    }
+
+    .recipes-container {
+      padding: 30px;
+
+      .page-title {
+        font-size: 50px;
+      }
+    }
+  }
   .store-locator {
     .store-locator-container {
       .store-locator-header {
@@ -261,7 +296,6 @@
       }
     }
   }
-
   .footer-container {
     padding: 0;
     .footer {
@@ -323,6 +357,45 @@
   }
 }
 
+@media (min-width: 601px) and (max-width: 819px) {
+  .header-container {
+    .navbar {
+      .menu-items ul {
+        margin-left: 0;
+
+        li {
+          text-align: center;
+        }
+      }
+
+      .social-media-icons {
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
+  }
+  .recipes {
+    .hero-block {
+      padding: 60px;
+      padding-top: 50px;
+
+      h3 {
+        font-size: 45px;
+        width: 50%;
+      }
+
+      button {
+        margin-bottom: 0;
+      }
+
+      img {
+        right: 0%;
+        width: 350px;
+      }
+    }
+  }
+}
+
 @media (min-width: 820px) and (max-width: 1025px) {
   .landing-page {
     .header-container {
@@ -369,9 +442,63 @@
       }
     }
   }
+
+  .recipes {
+    .hero-block {
+      padding: 100px;
+      padding-top: 50px;
+
+      h3 {
+        font-size: 45px;
+        width: 50%;
+      }
+
+      button {
+        margin-bottom: 0;
+      }
+
+      img {
+        right: 0%;
+        width: 400px;
+      }
+    }
+  }
+
+  .header-container {
+    .navbar {
+      .navbar-brand {
+        img {
+          width: 220px;
+        }
+      }
+      .menu-items {
+        ul {
+          margin-left: 10px;
+          gap: 10px;
+
+          li a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1500px) {
+  .header-container {
+    .navbar {
+      .menu-items ul {
+        margin-left: 60px;
+        gap: 25px;
+
+        li a {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
   .landing-page {
     .hero-section {
       .hero-section-content {
@@ -389,9 +516,17 @@
       overflow-x: hidden;
       padding: 100px;
 
+      .content {
+        h3 {
+          width: 53%;
+        }
+        button {
+          margin-bottom: 0;
+        }
+      }
+
       img {
-        right: -9%;
-        width: 75%;
+        right: 5%;
       }
     }
     .recipes-container {
