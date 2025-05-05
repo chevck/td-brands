@@ -122,6 +122,9 @@
     .hero-section {
       .hero-section-content {
         .hero-section-img {
+          &._full-color-flavor {
+            width: 750px;
+          }
           &._beans {
             display: none;
           }
@@ -350,7 +353,7 @@
           }
 
           &._full-color-flavor {
-            width: 300px;
+            width: 250px;
             left: 5px;
             top: 50px;
           }
