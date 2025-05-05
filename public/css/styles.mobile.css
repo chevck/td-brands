@@ -156,7 +156,7 @@
   }
 }
 
-@media (min-width: 820px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1025px) {
   .landing-page {
     .header-container {
       padding-left: 30px;
@@ -187,16 +187,25 @@
     .hero-section {
       .hero-section-content {
         .hero-section-img {
+          &._left-leaves {
+            left: -567px;
+            top: -354px;
+            width: 900px;
+          }
+          &._tomatoes {
+            left: -380px;
+            top: 350px;
+            width: 712px;
+          }
+          &._full-color-flavor {
+            left: 0px;
+            width: 635px;
+            top: 200px;
+          }
           &._leaves-right,
           &._corn,
           &._beans {
             display: none;
-          }
-
-          &._full-color-flavor {
-            left: 50px;
-            width: 650px;
-            top: 200px;
           }
         }
       }
@@ -341,15 +350,15 @@
           }
 
           &._full-color-flavor {
-            width: 365px;
-            left: -30px;
+            width: 300px;
+            left: 5px;
             top: 50px;
           }
 
           &._tomatoes {
             width: 300px;
             top: 250px;
-            left: -110px;
+            left: -130px;
           }
 
           &._beans {
