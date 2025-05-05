@@ -1,3 +1,298 @@
+@media (min-width: 1501px) and (max-width: 1700px) {
+  .landing-page {
+    .hero-section {
+      height: 650px;
+      .hero-section-content {
+        .hero-section-img {
+          &._left-leaves {
+            left: -650px;
+            top: -370px;
+            width: 1025px;
+          }
+          &._tomatoes {
+            left: -325px;
+            top: 300px;
+            width: 630px;
+          }
+          &._full-color-flavor {
+            left: -20px;
+            width: 650px;
+            top: 70px;
+          }
+          &._leaves-right {
+            width: 740px;
+          }
+          &._corn {
+            width: 510px;
+          }
+        }
+      }
+    }
+
+    .about-mangrove {
+      h6 {
+        width: fit-content;
+      }
+
+      .side-img {
+        &.pepper-nut {
+          bottom: -240px;
+          width: 585px;
+          left: -400px;
+        }
+      }
+    }
+  }
+
+  .footer-container {
+    .footer {
+      display: flex;
+      flex-flow: column;
+      padding: 20px 30px;
+      gap: 15px;
+
+      .logo-column {
+        img {
+          width: 200px;
+        }
+      }
+
+      .height-line {
+        display: none;
+      }
+
+      .newsletter-column {
+        width: 100%;
+
+        button {
+          padding: 5px 25px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .bottom-footer,
+      .mangrove-brand {
+        display: none !important;
+      }
+
+      .mobile-copyright-column {
+        display: block;
+        margin-top: -20px;
+
+        p {
+          font-size: 13px;
+          color: var(--secondary-color);
+          font-weight: 200;
+        }
+
+        .social-media-icons {
+          display: flex;
+          gap: 10px;
+          a {
+            color: #fff;
+            font-size: 35px;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1026px) and (max-width: 1500px) {
+  .header-container {
+    .navbar {
+      .menu-items ul {
+        margin-left: 60px;
+        gap: 25px;
+
+        li a {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .landing-page {
+    .hero-section {
+      .hero-section-content {
+        .hero-section-img {
+          &._beans {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .recipes {
+    .hero-block {
+      overflow-x: hidden;
+      padding: 100px;
+
+      .content {
+        h3 {
+          width: 53%;
+        }
+        button {
+          margin-bottom: 0;
+        }
+      }
+
+      img {
+        right: 5%;
+      }
+    }
+    .recipes-container {
+      .recipes-flex-2 {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1025px) {
+  .landing-page {
+    .header-container {
+      padding-left: 30px;
+      .navbar {
+        .navbar-brand {
+          img {
+            width: 150px;
+          }
+        }
+        .menu-items ul {
+          gap: 15px;
+          margin-left: 50px;
+          li a {
+            font-size: 18px;
+          }
+        }
+
+        .social-media-icons {
+          ul li {
+            a i {
+              font-size: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .hero-section {
+      .hero-section-content {
+        .hero-section-img {
+          &._leaves-right,
+          &._corn,
+          &._beans {
+            display: none;
+          }
+
+          &._full-color-flavor {
+            left: 50px;
+            width: 650px;
+            top: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .recipes {
+    .hero-block {
+      padding: 100px;
+      padding-top: 50px;
+
+      h3 {
+        font-size: 45px;
+        width: 50%;
+      }
+
+      h6 {
+        margin-bottom: 100px;
+      }
+
+      button {
+        margin-bottom: 0;
+      }
+
+      img {
+        right: 0%;
+        width: 400px;
+      }
+    }
+  }
+
+  .header-container {
+    .navbar {
+      .navbar-brand {
+        img {
+          width: 220px;
+        }
+      }
+      .menu-items {
+        ul {
+          margin-left: 10px;
+          gap: 10px;
+
+          li a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 819px) {
+  .header-container {
+    .navbar {
+      .menu-items ul {
+        margin-left: 0;
+
+        li {
+          text-align: center;
+        }
+      }
+
+      .social-media-icons {
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .recipes {
+    .hero-block {
+      padding: 60px;
+      padding-top: 50px;
+
+      h3 {
+        font-size: 45px;
+        width: 50%;
+      }
+
+      h6 {
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin-bottom: 0;
+      }
+
+      img {
+        right: 0%;
+        width: 350px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .header-container {
     padding: 0px 20px;
@@ -35,6 +330,7 @@
   }
   .landing-page {
     .hero-section {
+      background-image: url("../imgs/hero-img-mobile.png");
       height: 400px;
       .hero-section-content {
         .hero-section-img {
@@ -45,9 +341,9 @@
           }
 
           &._full-color-flavor {
-            width: 325px;
-            left: 10px;
-            top: 15px;
+            width: 365px;
+            left: -30px;
+            top: 50px;
           }
 
           &._tomatoes {
@@ -160,6 +456,7 @@
         }
 
         .our-recipes-content-carousel {
+          margin-left: 0;
           ul {
             li {
               display: flex;
@@ -168,7 +465,6 @@
             &.react-multi-carousel-track {
               display: flex;
               justify-content: center;
-              gap: 0;
             }
           }
         }
@@ -356,204 +652,6 @@
 
     .footer-bottom {
       display: none;
-    }
-  }
-}
-
-@media (min-width: 601px) and (max-width: 819px) {
-  .header-container {
-    .navbar {
-      .menu-items ul {
-        margin-left: 0;
-
-        li {
-          text-align: center;
-        }
-      }
-
-      .social-media-icons {
-        text-align: center;
-        margin-top: 5px;
-      }
-    }
-  }
-  .recipes {
-    .hero-block {
-      padding: 60px;
-      padding-top: 50px;
-
-      h3 {
-        font-size: 45px;
-        width: 50%;
-      }
-
-      button {
-        margin-bottom: 0;
-      }
-
-      img {
-        right: 0%;
-        width: 350px;
-      }
-    }
-  }
-}
-
-@media (min-width: 820px) and (max-width: 1025px) {
-  .landing-page {
-    .header-container {
-      padding-left: 30px;
-      .navbar {
-        .navbar-brand {
-          img {
-            width: 150px;
-          }
-        }
-        .menu-items ul {
-          gap: 15px;
-          margin-left: 50px;
-          li a {
-            font-size: 18px;
-          }
-        }
-
-        .social-media-icons {
-          ul li {
-            a i {
-              font-size: 45px;
-            }
-          }
-        }
-      }
-    }
-
-    .hero-section {
-      .hero-section-content {
-        .hero-section-img {
-          &._leaves-right,
-          &._corn,
-          &._beans {
-            display: none;
-          }
-
-          &._full-color-flavor {
-            left: 50px !important;
-            width: 650px !important;
-            top: 200px !important;
-          }
-        }
-      }
-    }
-  }
-
-  .recipes {
-    .hero-block {
-      padding: 100px;
-      padding-top: 50px;
-
-      h3 {
-        font-size: 45px;
-        width: 50%;
-      }
-
-      button {
-        margin-bottom: 0;
-      }
-
-      img {
-        right: 0%;
-        width: 400px;
-      }
-    }
-  }
-
-  .header-container {
-    .navbar {
-      .navbar-brand {
-        img {
-          width: 220px;
-        }
-      }
-      .menu-items {
-        ul {
-          margin-left: 10px;
-          gap: 10px;
-
-          li a {
-            font-size: 18px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1500px) {
-  .header-container {
-    .navbar {
-      .menu-items ul {
-        margin-left: 60px;
-        gap: 25px;
-
-        li a {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-
-  .landing-page {
-    .hero-section {
-      .hero-section-content {
-        .hero-section-img {
-          &._beans {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
-  .recipes {
-    .hero-block {
-      overflow-x: hidden;
-      padding: 100px;
-
-      .content {
-        h3 {
-          width: 53%;
-        }
-        button {
-          margin-bottom: 0;
-        }
-      }
-
-      img {
-        right: 5%;
-      }
-    }
-    .recipes-container {
-      .recipes-flex-2 {
-        justify-content: center;
-      }
-    }
-  }
-}
-
-@media (max-width: 1700px) {
-  .landing-page {
-    .hero-section {
-      height: 650px;
-      .hero-section-content {
-        .hero-section-img {
-          &._leaves-right {
-            width: 740px;
-          }
-          &._corn {
-            width: 510px;
-          }
-        }
-      }
     }
   }
 }

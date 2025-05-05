@@ -74,19 +74,18 @@ export function Footer() {
         </div>
         <div className='mobile-copyright-column'>
           <p>
-            © MANGROVE FOODS LTD {new Date().getFullYear()} - ALL RIGHTS
-            RESERVED
+            © MANGROVE FOODS {new Date().getFullYear()} - ALL RIGHTS RESERVED
           </p>
           <div className='social-media-icons'>
             <a
-              href='https://www.facebook.com/mangrovefoods'
+              href='http://facebook.com/mangrovefoods'
               target='_blank'
               rel='noopener noreferrer'
             >
               <i className='bi bi-facebook'></i>
             </a>
             <a
-              href='https://www.instagram.com/mangrovefoods'
+              href='https://www.instagram.com/mangrove.foods/'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -95,7 +94,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
       <img
         src={MangroveBrand}
         alt='Mangrove Brand'
@@ -105,20 +103,18 @@ export function Footer() {
       <div className='footer-bottom'>
         <div></div>
         <div></div>
-        <p>
-          © MANGROVE FOODS LTD {new Date().getFullYear()} - ALL RIGHTS RESERVED
-        </p>
+        <p>© MANGROVE FOODS {new Date().getFullYear()} - ALL RIGHTS RESERVED</p>
         <div />
         <div className='social-media-icons'>
           <a
-            href='https://www.facebook.com/mangrovefoods'
+            href='http://facebook.com/mangrovefoods'
             target='_blank'
             rel='noopener noreferrer'
           >
             <i className='bi bi-facebook'></i>
           </a>
           <a
-            href='https://www.instagram.com/mangrovefoods'
+            href='https://www.instagram.com/mangrove.foods/'
             target='_blank'
             rel='noopener noreferrer'
           >

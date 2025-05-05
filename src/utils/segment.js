@@ -16,7 +16,10 @@ export const initializeSegment = async () => {
     const response = await fetch(
       `https://ipinfo.io/${ip}/json?token=${process.env.REACT_APP_IPINFO_TOKEN}`
     );
+
     const { ...rest } = await response.json();
+
+    console.log({ ip, response: await response.json() });
 
     if (userId) return; // if there is a user initialized, return ::: this is to prevent multiple initializations
     userId = generateUniqueId();
