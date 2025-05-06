@@ -10,29 +10,65 @@ import Corn from "../assets/corn.png";
 import MangroveProducts from "../assets/mangroove-products.png";
 import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
-import JollofPlate from "../assets/jollof-plate.png";
-import Carousel from "react-multi-carousel";
-import React, { useEffect } from "react";
+// import Carousel from "react-multi-carousel";
+import React, { useEffect, useState } from "react";
 import { Footer } from "../components/footer";
 import { trackPageView } from "../utils/segment";
+import { toast } from "react-toastify";
+import { createClient } from "contentful";
+import useEmblaCarousel from "embla-carousel-react";
 
 export function LandingPage() {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
+  const [recipes, setRecipes] = useState([]);
+  // const [emblaRef] = useEmblaCarousel();
+
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3,
+  //     slidesToSlide: 3, // optional, default to 1.
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 464 },
+  //     items: 2,
+  //     slidesToSlide: 2, // optional, default to 1.
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  // };
+
+  const client = createClient({
+    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY,
+  });
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    // loop: true,
+    containScroll: true,
+    slidesToScroll: 2,
+    duration: 5,
+  });
+
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes()); // Access API
+    }
+  }, [emblaApi]);
+
+  const fetchRecipes = async () => {
+    try {
+      const { items } = await client.getEntries({
+        content_type: "recipes",
+        order: "sys.createdAt",
+      });
+      setRecipes(items.splice(0, 5));
+    } catch (error) {
+      console.log("eree", error);
+      toast.error("There was a problem fetching recipes");
+    }
   };
 
   useEffect(() => {
@@ -50,7 +86,11 @@ export function LandingPage() {
 
   useEffect(() => {
     trackPageView("Viewed Landing Page");
+    fetchRecipes();
+    // eslint-disable-next-line
   }, []);
+
+  console.log({ recipes });
 
   return (
     <div className='landing-page'>
@@ -153,6 +193,48 @@ export function LandingPage() {
         <div className='our-recipes'>
           <h5>Mangrove Recipes</h5>
           <div className='our-recipes-content'>
+            <div className='embla' ref={emblaRef}>
+              <div
+                className='embla__container'
+                style={{
+                  width: "100%",
+                  justifyContent: recipes.length > 3 ? "left" : "center",
+                }}
+              >
+                {[...recipes].map((recipe, key) => (
+                  <div
+                    className='our-recipes-content-item embla__slide'
+                    key={key}
+                  >
+                    <div className='our-recipes-content-item-img'>
+                      <img
+                        src={recipe.fields.foodImage.fields.file.url}
+                        alt={recipe.fields.foodImage.fields.title}
+                        className='img-fluid'
+                      />
+                    </div>
+                    <div className='our-recipes-content-item-text'>
+                      <h6>{recipe.fields.foodName}</h6>
+                      <p>
+                        {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
+                        with {recipe.fields.ingredients}
+                      </p>
+                      <button
+                        onClick={() => (window.location.href = `/recipes`)}
+                      >
+                        <p>See Recipe</p>
+                        <i className='bi bi-chevron-right'></i>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+                {/* <div className='embla__slide'>Slide 1</div>
+                <div className='embla__slide'>Slide 2</div>
+                <div className='embla__slide'>Slide 3</div> */}
+              </div>
+            </div>
+          </div>
+          {/* <div className='our-recipes-content'>
             <Carousel
               arrows={false}
               autoPlaySpeed={5000}
@@ -164,41 +246,47 @@ export function LandingPage() {
               className='our-recipes-content-carousel'
               dotListClass='custom-dot-list-style'
               renderDotsOutside={true}
-              infinite={true}
+              // infinite={true}
             >
-              {[1, 2, 3, 4, 5, 6].map((_, key) => (
-                <div className='our-recipes-content-item' key={key}>
-                  <div className='our-recipes-content-item-img'>
-                    <img
-                      src={JollofPlate}
-                      alt='Jollof Plate'
-                      className='img-fluid'
-                    />
+              {[...recipes, ...recipes, ...recipes, ...recipes].map(
+                (recipe, key) => (
+                  <div className='our-recipes-content-item' key={key}>
+                    <div className='our-recipes-content-item-img'>
+                      <img
+                        src={recipe.fields.foodImage.fields.file.url}
+                        alt={recipe.fields.foodImage.fields.title}
+                        className='img-fluid'
+                      />
+                    </div>
+                    <div className='our-recipes-content-item-text'>
+                      <h6>{recipe.fields.foodName}</h6>
+                      <p>
+                        {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
+                        with {recipe.fields.ingredients}
+                      </p>
+                      <button
+                        onClick={() => (window.location.href = `/recipes`)}
+                      >
+                        <p>See Recipe</p>
+                        <i className='bi bi-chevron-right'></i>
+                      </button>
+                    </div>
                   </div>
-                  <div className='our-recipes-content-item-text'>
-                    <h6>Jollof Rice</h6>
-                    <p>
-                      Delicious and rich in flavour, this classic recipe is a
-                      wonderful taste of home in a bowl
-                    </p>
-                    <button>
-                      <p>See Recipe</p>
-                      <i className='bi bi-chevron-right'></i>
-                    </button>
-                  </div>
-                </div>
-              ))}
+                )
+              )}
             </Carousel>
-          </div>
-          <div className='more-recipes-btn-container'>
-            <button
-              className='more-recipes-btn'
-              onClick={() => (window.location.href = "/recipes")}
-            >
-              <p>More Recipes</p>
-              <i className='bi bi-chevron-right'></i>
-            </button>
-          </div>
+          </div> */}
+          {recipes.length > 4 ? (
+            <div className='more-recipes-btn-container'>
+              <button
+                className='more-recipes-btn'
+                onClick={() => (window.location.href = "/recipes")}
+              >
+                <p>More Recipes</p>
+                <i className='bi bi-chevron-right'></i>
+              </button>
+            </div>
+          ) : null}
         </div>
         <Footer />
       </div>

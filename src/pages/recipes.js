@@ -3,6 +3,7 @@ import ChefTwo from "../assets/chef-one.png";
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { Footer } from "../components/footer";
 
 export function Recipes() {
   const [recipes, setRecipes] = useState([]);
@@ -143,6 +144,7 @@ export function Recipes() {
           ))}
         </div> */}
       </div>
+      <Footer />
     </div>
   );
 }
