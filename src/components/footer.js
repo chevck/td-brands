@@ -116,9 +116,10 @@ export function Footer() {
               <i className='bi bi-instagram'></i>
             </a>
             <a
-            // href='https://www.tiktok.com/mangrovefoods'
-            // target='_blank'
-            // rel='noopener noreferrer'
+              href={() => false}
+              // href='https://www.tiktok.com/mangrovefoods'
+              // target='_blank'
+              // rel='noopener noreferrer'
             >
               <i className='bi bi-tiktok'></i>
             </a>
@@ -152,9 +153,10 @@ export function Footer() {
             <i className='bi bi-instagram'></i>
           </a>
           <a
-          // href='https://www.tiktok.com/mangrovefoods'
-          // target='_blank'
-          // rel='noopener noreferrer'
+            href={() => false}
+            // href='https://www.tiktok.com/mangrovefoods'
+            // target='_blank'
+            // rel='noopener noreferrer'
           >
             <i className='bi bi-tiktok'></i>
           </a>
