@@ -7,6 +7,7 @@ import ReactPaginate from "react-paginate";
 import { getDistanceInMiles, getDistanceInKm } from "../utils/index";
 import { handleAppError } from "../utils/error-handler";
 import { Footer } from "../components/footer";
+import { trackEvent } from "../utils/segment";
 
 export function StoreLocator() {
   const [searching, setSearching] = useState(false);
@@ -74,9 +75,9 @@ export function StoreLocator() {
     // if (Object.keys(searchBody).length) setSearchBody({});
     const timeout = setTimeout(() => {
       setDebouncedSearchAddress(searchAddress);
-      //   trackEvent("Store Address Entered", {
-      //     address: searchAddress,
-      //   });
+      trackEvent("Store Address Entered", {
+        address: searchAddress,
+      });
     }, 1000);
     return () => clearTimeout(timeout);
   }, [searchAddress]);
@@ -192,6 +193,7 @@ export function StoreLocator() {
 
   const handleSearch = async () => {
     try {
+      console.log("called");
       if (!searchAddress) return;
       let body = searchBody;
       if (!searchBody.searchTerm)
@@ -200,9 +202,9 @@ export function StoreLocator() {
           searchTerm: searchAddress,
         };
       setLoading(true);
-      //   trackEvent("Store Address Searched", {
-      //     address: searchAddress,
-      //   });
+      trackEvent("Store Address Searched", {
+        address: searchAddress,
+      });
       const response = await fetch(
         "https://qn6x4esklh.execute-api.us-east-1.amazonaws.com/prod/stores",
         {
@@ -222,11 +224,11 @@ export function StoreLocator() {
       });
       let stores = data.slice(0, 10);
       stores = formatStores(stores);
-      // if (stores.length)
-      // trackEvent("Search Results Viewed", {
-      //   address: searchAddress,
-      //   results: stores.length,
-      // });
+      if (stores.length)
+        trackEvent("Search Results Viewed", {
+          address: searchAddress,
+          results: stores.length,
+        });
       setStores(stores);
       setLoading(false);
       setSearched(true);
@@ -292,10 +294,10 @@ export function StoreLocator() {
   const viewAStore = (store) => {
     // called when a store is viewed
     if (store && map.current) {
-      //   trackEvent("Store Viewed", {
-      //     storeName: store.storeName,
-      //     address: store.address,
-      //   });
+      trackEvent("Store Viewed", {
+        storeName: store.storeName,
+        address: store.address,
+      });
       openInGoogleMaps(store.address);
     }
   };

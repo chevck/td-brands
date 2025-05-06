@@ -5,5 +5,5 @@ export function handleAppError(err) {
     return toast.error(
       "Your internet is unavailable at the moment. Please try again later"
     );
-  return toast.error("Something went wrong. Please try again later");
+  if (err) return toast.error("Something went wrong. Please try again later");
 }

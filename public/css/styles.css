@@ -1070,6 +1070,14 @@ button {
         i {
           font-size: 20px;
         }
+
+        .loading {
+          .spinner-border {
+            color: #fff !important;
+            width: 25px;
+            height: 25px;
+          }
+        }
       }
 
       .social-media-icons {

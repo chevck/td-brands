@@ -2,10 +2,13 @@ import MangroveLogo from "../assets/mangroove-logo.svg";
 import MangroveBrand from "../assets/mangroove-brand.svg";
 import { trackEvent } from "../utils/segment";
 import { useState } from "react";
+import Loading from "./loading";
+import { toast } from "react-toastify";
 
 export function Footer() {
   const [emailAddress, setEmailAddress] = useState("");
   const isOnHomePage = window.location.pathname === "/";
+  const [loading, setLoading] = useState(false);
 
   const isEmailValid = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,9 +16,28 @@ export function Footer() {
   };
 
   const handleSubscribeUser = () => {
-    if (!isEmailValid(emailAddress)) return "Invalid Email Address";
-    // save to segment
-    trackEvent("Email Subscription", { emailAddress });
+    if (!emailAddress) return toast.error("Please enter an email address");
+    if (!isEmailValid(emailAddress))
+      return toast.error("Invalid Email Address");
+    setLoading(true);
+    try {
+      setTimeout(() => {
+        // save to segment
+        trackEvent("Email Subscription", { emailAddress });
+        toast.success("Email Subscribed Successfully", {
+          align: "center",
+          autoClose: 5000,
+        });
+        setLoading(false);
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      toast.error("Email Subscription Failed", {
+        align: "center",
+        autoClose: 5000,
+      });
+    }
   };
 
   return (
@@ -67,9 +89,9 @@ export function Footer() {
             placeholder='Enter your email'
             onChange={({ target: { value } }) => setEmailAddress(value)}
           />
-          <button onClick={handleSubscribeUser}>
+          <button disabled={loading} onClick={handleSubscribeUser}>
             <p>Subscribe</p>
-            <i className='bi bi-chevron-right'></i>
+            {loading ? <Loading /> : <i className='bi bi-chevron-right'></i>}
           </button>
         </div>
         <div className='mobile-copyright-column'>
