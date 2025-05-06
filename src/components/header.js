@@ -75,7 +75,7 @@ export function Header() {
             <ul className='navbar-nav mb-2 mb-lg-0'>
               <li className='nav-item'>
                 <a
-                  href='instagram.com'
+                  href='https://www.instagram.com/mangrove.foods/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
