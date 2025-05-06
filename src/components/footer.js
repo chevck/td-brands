@@ -28,6 +28,7 @@ export function Footer() {
           align: "center",
           autoClose: 5000,
         });
+        setEmailAddress("");
         setLoading(false);
       }, 2000);
     } catch (error) {
@@ -87,6 +88,7 @@ export function Footer() {
             className='form-control'
             type='text'
             placeholder='Enter your email'
+            value={emailAddress}
             onChange={({ target: { value } }) => setEmailAddress(value)}
           />
           <button disabled={loading} onClick={handleSubscribeUser}>
@@ -114,9 +116,9 @@ export function Footer() {
               <i className='bi bi-instagram'></i>
             </a>
             <a
-              href='https://www.tiktok.com/mangrovefoods'
-              target='_blank'
-              rel='noopener noreferrer'
+            // href='https://www.tiktok.com/mangrovefoods'
+            // target='_blank'
+            // rel='noopener noreferrer'
             >
               <i className='bi bi-tiktok'></i>
             </a>
@@ -150,9 +152,9 @@ export function Footer() {
             <i className='bi bi-instagram'></i>
           </a>
           <a
-            href='https://www.tiktok.com/mangrovefoods'
-            target='_blank'
-            rel='noopener noreferrer'
+          // href='https://www.tiktok.com/mangrovefoods'
+          // target='_blank'
+          // rel='noopener noreferrer'
           >
             <i className='bi bi-tiktok'></i>
           </a>
