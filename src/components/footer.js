@@ -91,6 +91,13 @@ export function Footer() {
             >
               <i className='bi bi-instagram'></i>
             </a>
+            <a
+              href='https://www.tiktok.com/mangrovefoods'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <i className='bi bi-tiktok'></i>
+            </a>
           </div>
         </div>
       </div>
