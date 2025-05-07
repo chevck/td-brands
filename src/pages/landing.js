@@ -215,10 +215,7 @@ export function LandingPage() {
                     </div>
                     <div className='our-recipes-content-item-text'>
                       <h6>{recipe.fields.foodName}</h6>
-                      <p>
-                        {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
-                        with {recipe.fields.ingredients}
-                      </p>
+                      <p>{recipe.fields.description}</p>
                       <button
                         onClick={() => (window.location.href = `/recipes`)}
                       >
@@ -276,17 +273,16 @@ export function LandingPage() {
               )}
             </Carousel>
           </div> */}
-          {recipes.length > 4 ? (
-            <div className='more-recipes-btn-container'>
-              <button
-                className='more-recipes-btn'
-                onClick={() => (window.location.href = "/recipes")}
-              >
-                <p>More Recipes</p>
-                <i className='bi bi-chevron-right'></i>
-              </button>
-            </div>
-          ) : null}
+
+          <div className='more-recipes-btn-container'>
+            <button
+              className='more-recipes-btn'
+              onClick={() => (window.location.href = "/recipes")}
+            >
+              <p>All Recipes</p>
+              <i className='bi bi-chevron-right'></i>
+            </button>
+          </div>
         </div>
         <Footer />
       </div>

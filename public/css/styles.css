@@ -22,6 +22,100 @@ button {
   overflow-x: visible;
 }
 
+/* Shimmer background */
+.shimmer-background {
+  position: absolute;
+  background: #21252966;
+  /* background: #f7eacc94; */
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(
+    to right,
+    #f0f0f085 0%,
+    #f0f0f09e 20%,
+    #f0f0f085 40%,
+    #f0f0f09e 100%
+  ); */
+  /* background: linear-gradient(
+    to right,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  ); */
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Lady cooking animation placeholder */
+.cooking-lady {
+  width: 350px;
+  height: 350px;
+  background-image: url("../imgs/cooking-lady.png");
+  background-size: cover;
+  background-position: center;
+  animation: float 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating effect for the image */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Floating logo */
+.floating-logo {
+  width: 400px;
+  height: 400px;
+  background-image: url("../imgs/mangrove-brand.svg"); /* Replace with your logo path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .header-container {
   background-color: var(--primary-color);
   /* padding: 66px 66px 66px 112px; */
@@ -372,6 +466,7 @@ button {
         max-width: 600px;
         background: #fcea56;
         overflow: hidden;
+        align-items: center;
         h6 {
           color: #004772 !important;
         }
@@ -398,12 +493,22 @@ button {
         }
 
         .our-recipes-content-item-img {
-          width: 600px;
+          /* width: 600px;
           margin-left: -110px;
           padding: 30px;
           display: flex;
           align-items: center;
+          justify-content: center; */
+
+          width: 500px;
+          height: 500px;
+          /* margin-left: -110px; */
+          padding: 25px;
+          display: flex;
+          align-items: center;
           justify-content: center;
+          position: relative;
+          left: -120px;
 
           img {
             object-fit: contain;
@@ -417,7 +522,7 @@ button {
             font-size: 45px;
             font-weight: 700;
             margin-bottom: 26px;
-            height: 100px;
+            max-height: 100px;
             display: -webkit-box;
             -webkit-line-clamp: 2; /* Limit to 2 lines */
             -webkit-box-orient: vertical;
@@ -837,7 +942,7 @@ button {
   }
   .recipes-container {
     background-color: #fdf3dc;
-    height: 100dvh;
+    height: 100%;
     padding: 50px 100px;
     padding-top: 70px;
 
@@ -1018,6 +1123,118 @@ button {
             font-size: 14px;
           }
         }
+      }
+    }
+  }
+}
+
+.recipe-details-modal {
+  .modal-header {
+    background: url("../imgs/table-food-serving.jpg");
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .modal-body {
+    padding: 35px 50px;
+
+    h3 {
+      font-size: 40px;
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .main-ingredient {
+      display: flex;
+      gap: 10px;
+      color: #004f4e;
+
+      i {
+        color: #fcea56;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #004f4e;
+      }
+    }
+
+    .details {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+
+      div {
+        display: flex;
+        gap: 8px;
+        background: #004f4e;
+        height: fit-content;
+        padding: 5px 15px;
+        border-radius: 9px;
+        color: white;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+
+      p {
+        font-size: 15px;
+        font-weight: 300;
+      }
+    }
+
+    .flex {
+      display: flex;
+      gap: 35px;
+      margin-top: 50px;
+
+      .food-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 18px;
+
+        img {
+          height: 100%;
+          /* object-fit: cover; */
+          object-fit: contain;
+        }
+      }
+
+      .ingredients {
+        width: 100%;
+        ul {
+          list-style: square;
+          padding-left: 13px;
+
+          li {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .preparation-steps {
+      margin-top: 40px;
+
+      ul {
+        list-style: circle;
+      }
+
+      li {
+        margin-bottom: 7px;
+        font-size: 18px;
       }
     }
   }
