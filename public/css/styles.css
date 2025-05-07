@@ -163,11 +163,33 @@ button {
 }
 .embla__container {
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.embla__controllers {
+  justify-content: center;
+  position: relative;
+  z-index: 4;
+  height: 100px;
+  top: 44px;
+  gap: 5px;
+  display: flex;
+
+  button.scroll-controller {
+    height: 20px;
+    width: 18px;
+    border-radius: 50%;
+    background: #004f4e;
+    border: 4px solid #a7b804;
+
+    &.active {
+      background: #a7b804;
+    }
+  }
 }
 
 .landing-page {
@@ -385,7 +407,7 @@ button {
       align-items: center;
       justify-content: space-evenly;
       padding: 0;
-      padding-bottom: 100px;
+      /* padding-bottom: 100px; */
       padding-top: 50px;
       gap: 85px;
       overflow: scroll;
@@ -1135,6 +1157,16 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+
+    .bttn-close {
+      background: transparent !important;
+      top: 0;
+      position: absolute;
+      right: -2px;
+      i {
+        font-size: 25px;
+      }
+    }
   }
 
   .modal-body {
@@ -1194,8 +1226,9 @@ button {
 
     .flex {
       display: flex;
-      gap: 35px;
+      gap: 40px;
       margin-top: 50px;
+      align-items: center;
 
       .food-image {
         width: 100%;

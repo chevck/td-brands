@@ -1,11 +1,4 @@
 export function RecipesDetailModal({ recipe }) {
-  console.log({ recipe });
-  console.log(
-    "sds",
-    recipe?.fields?.ingredientsList.content.find(
-      (el) => el.nodeType === "unordered-list"
-    )?.content
-  );
   return (
     <>
       <div
@@ -30,7 +23,7 @@ export function RecipesDetailModal({ recipe }) {
             <div className='modal-body'>
               <h3>{recipe?.fields?.foodName}</h3>
               <div className='main-ingredient'>
-                <i className='bi bi-star-half'></i>
+                <i className='bi bi-star-fill'></i>
                 <h2>{recipe?.fields?.mainIngredient}</h2>
               </div>
               <div className='details'>
@@ -39,7 +32,7 @@ export function RecipesDetailModal({ recipe }) {
                   <p>{recipe?.fields?.origin}</p>
                 </div>
                 <div className=''>
-                  <i className='bi bi-star-half'></i>
+                  <i className='bi bi-star'></i>
                   <p>{recipe?.fields?.vibe}</p>
                 </div>
                 <div className=''>

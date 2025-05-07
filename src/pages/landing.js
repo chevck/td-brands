@@ -11,7 +11,7 @@ import MangroveProducts from "../assets/mangroove-products.png";
 import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
 // import Carousel from "react-multi-carousel";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Footer } from "../components/footer";
 import { trackPageView } from "../utils/segment";
 import { toast } from "react-toastify";
@@ -20,6 +20,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 export function LandingPage() {
   const [recipes, setRecipes] = useState([]);
+  const [pos, setPos] = useState("prev");
   // const [emblaRef] = useEmblaCarousel();
 
   // const responsive = {
@@ -90,7 +91,15 @@ export function LandingPage() {
     // eslint-disable-next-line
   }, []);
 
-  console.log({ recipes });
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+    setPos("prev");
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+    setPos("next");
+  }, [emblaApi]);
 
   return (
     <div className='landing-page'>
@@ -225,10 +234,25 @@ export function LandingPage() {
                     </div>
                   </div>
                 ))}
-                {/* <div className='embla__slide'>Slide 1</div>
-                <div className='embla__slide'>Slide 2</div>
-                <div className='embla__slide'>Slide 3</div> */}
               </div>
+              {recipes.length && (
+                <div className='embla__controllers'>
+                  <button
+                    className={
+                      "embla__prev scroll-controller" +
+                      (pos === "prev" ? " active" : "")
+                    }
+                    onClick={scrollPrev}
+                  ></button>
+                  <button
+                    className={
+                      "embla__next scroll-controller" +
+                      (pos === "next" ? " active" : "")
+                    }
+                    onClick={scrollNext}
+                  ></button>
+                </div>
+              )}
             </div>
           </div>
           {/* <div className='our-recipes-content'>
@@ -274,15 +298,17 @@ export function LandingPage() {
             </Carousel>
           </div> */}
 
-          <div className='more-recipes-btn-container'>
-            <button
-              className='more-recipes-btn'
-              onClick={() => (window.location.href = "/recipes")}
-            >
-              <p>All Recipes</p>
-              <i className='bi bi-chevron-right'></i>
-            </button>
-          </div>
+          {recipes.length && (
+            <div className='more-recipes-btn-container'>
+              <button
+                className='more-recipes-btn'
+                onClick={() => (window.location.href = "/recipes")}
+              >
+                <p>All Recipes</p>
+                <i className='bi bi-chevron-right'></i>
+              </button>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
