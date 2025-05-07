@@ -17,11 +17,12 @@ import { trackPageView } from "../utils/segment";
 import { toast } from "react-toastify";
 import { createClient } from "contentful";
 import useEmblaCarousel from "embla-carousel-react";
+import { PageLoadingShimmer } from "../components/page-loading";
 
 export function LandingPage() {
   const [recipes, setRecipes] = useState([]);
   const [pos, setPos] = useState("prev");
-  // const [emblaRef] = useEmblaCarousel();
+  const [pageLoading, setPageLoading] = useState(true);
 
   // const responsive = {
   //   desktop: {
@@ -47,7 +48,6 @@ export function LandingPage() {
   });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    // loop: true,
     containScroll: true,
     slidesToScroll: 2,
     duration: 5,
@@ -66,9 +66,11 @@ export function LandingPage() {
         order: "sys.createdAt",
       });
       setRecipes(items.splice(0, 5));
+      setPageLoading(false);
     } catch (error) {
       console.log("eree", error);
       toast.error("There was a problem fetching recipes");
+      setPageLoading(false);
     }
   };
 
@@ -103,6 +105,7 @@ export function LandingPage() {
 
   return (
     <div className='landing-page'>
+      {pageLoading ? <PageLoadingShimmer /> : null}
       <Header />
       <div className=''>
         {/* <div className="container-fluid"> */}
@@ -235,7 +238,7 @@ export function LandingPage() {
                   </div>
                 ))}
               </div>
-              {recipes.length && (
+              {recipes.length ? (
                 <div className='embla__controllers'>
                   <button
                     className={
@@ -252,7 +255,7 @@ export function LandingPage() {
                     onClick={scrollNext}
                   ></button>
                 </div>
-              )}
+              ) : null}
             </div>
           </div>
           {/* <div className='our-recipes-content'>
@@ -298,7 +301,7 @@ export function LandingPage() {
             </Carousel>
           </div> */}
 
-          {recipes.length && (
+          {recipes.length ? (
             <div className='more-recipes-btn-container'>
               <button
                 className='more-recipes-btn'
@@ -308,7 +311,7 @@ export function LandingPage() {
                 <i className='bi bi-chevron-right'></i>
               </button>
             </div>
-          )}
+          ) : null}
         </div>
         <Footer />
       </div>

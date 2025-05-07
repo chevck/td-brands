@@ -310,6 +310,11 @@
     justify-content: start !important;
   }
 
+  .embla__controllers {
+    height: 54px;
+    top: 32px;
+  }
+
   .floating-logo {
     width: 200px;
     height: 200px;
@@ -469,7 +474,7 @@
         font-size: 45px;
       }
       .our-recipes-content {
-        padding-bottom: 50px;
+        padding-bottom: 25px;
         padding-top: 20px;
 
         .custom-dot-list-style {
@@ -498,6 +503,9 @@
 
           .our-recipes-content-item-img {
             margin-top: -31px;
+            left: -70px;
+            padding: 0;
+
             img {
               width: 295px;
               margin-top: 30px;
@@ -519,6 +527,7 @@
               -webkit-box-orient: vertical;
               overflow: hidden;
               text-overflow: ellipsis;
+              width: 200px;
             }
             button {
               width: 165px;
