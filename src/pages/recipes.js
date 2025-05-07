@@ -13,6 +13,16 @@ export function Recipes() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const food = new URLSearchParams(window.location.search).get("food");
+
+  useEffect(() => {
+    if (!food) return;
+    const recipe = recipes.find((el) => el.fields.foodName === food);
+    if (recipe) {
+      setSelectedRecipe(recipe);
+      document.getElementById("open-recipe-details").click();
+    }
+  }, [food, recipes]);
 
   const client = createClient({
     space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -116,6 +126,7 @@ export function Recipes() {
                       </li>
                     </ul>
                     <button
+                      id='open-recipe-details'
                       data-bs-toggle='modal'
                       data-bs-target='#recipe-details-modal'
                       onClick={() => setSelectedRecipe(el)}

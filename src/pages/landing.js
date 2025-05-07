@@ -103,6 +103,8 @@ export function LandingPage() {
     setPos("next");
   }, [emblaApi]);
 
+  console.log({ recipes });
+
   return (
     <div className='landing-page'>
       {pageLoading ? <PageLoadingShimmer /> : null}
@@ -229,7 +231,9 @@ export function LandingPage() {
                       <h6>{recipe.fields.foodName}</h6>
                       <p>{recipe.fields.description}</p>
                       <button
-                        onClick={() => (window.location.href = `/recipes`)}
+                        onClick={() =>
+                          (window.location.href = `/recipes?food=${recipe.fields.foodName}`)
+                        }
                       >
                         <p>See Recipe</p>
                         <i className='bi bi-chevron-right'></i>
