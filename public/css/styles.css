@@ -414,6 +414,10 @@ button {
 
       .react-multi-carousel-list {
         margin-bottom: 60px;
+
+        ul {
+          gap: 35px;
+        }
       }
 
       .custom-dot-list-style {
