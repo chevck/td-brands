@@ -354,6 +354,7 @@
       }
     }
   }
+
   .landing-page {
     .hero-section {
       background-image: url("../imgs/hero-img-mobile.png");
@@ -481,20 +482,46 @@
           bottom: 13px;
         }
 
+        .react-multi-carousel-list {
+          margin-bottom: 40px;
+        }
+
         .our-recipes-content-carousel {
           margin-left: 0;
           ul {
             li {
               display: flex;
               justify-content: center;
-            }
-            &.react-multi-carousel-track {
-              display: flex;
-              justify-content: center;
+
+              :nth-child(2) {
+                display: none;
+              }
             }
           }
-        }
+          &.react-multi-carousel-track {
+            display: flex;
+            justify-content: center;
+          }
 
+          .react-multi-carousel-item {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+
+      .more-recipes-btn-container {
+        padding-bottom: 50px;
+        margin-top: 20px;
+        button {
+          width: 250px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .our-recipes-content {
         .our-recipes-content-item {
           width: 400px;
           padding: 15px;
@@ -514,8 +541,8 @@
 
           .our-recipes-content-item-text {
             h6 {
-              font-size: 35px;
-              margin-bottom: 10px;
+              font-size: 35px !important;
+              margin-bottom: 10px !important;
               height: 76px;
             }
             p {
@@ -540,17 +567,9 @@
           }
         }
       }
-      .more-recipes-btn-container {
-        padding-bottom: 50px;
-        button {
-          width: 250px;
-          p {
-            font-size: 15px;
-          }
-        }
-      }
     }
   }
+
   .recipes {
     .hero-block {
       padding: 30px;

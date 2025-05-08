@@ -412,8 +412,12 @@ button {
       gap: 85px;
       overflow: scroll;
 
+      .react-multi-carousel-list {
+        margin-bottom: 60px;
+      }
+
       .custom-dot-list-style {
-        bottom: 35px;
+        /* bottom: 35px; */
 
         button {
           width: 18px;
@@ -429,7 +433,7 @@ button {
         }
       }
 
-      /* .our-recipes-content-carousel {
+      .our-recipes-content-carousel {
         margin-left: 20px;
         justify-content: center;
         ul.react-multi-carousel-track {
@@ -477,7 +481,7 @@ button {
             }
           }
         }
-      } */
+      }
 
       .our-recipes-content-item {
         height: 300px;
@@ -489,6 +493,8 @@ button {
         background: #fcea56;
         overflow: hidden;
         align-items: center;
+        width: 100%;
+
         h6 {
           color: #004772 !important;
         }
@@ -544,6 +550,7 @@ button {
             font-size: 45px;
             font-weight: 700;
             margin-bottom: 26px;
+            height: fit-content;
             max-height: 100px;
             display: -webkit-box;
             -webkit-line-clamp: 2; /* Limit to 2 lines */
@@ -586,6 +593,7 @@ button {
       display: flex;
       justify-content: center;
       padding-bottom: 100px;
+      margin-top: 40px;
 
       button {
         display: flex;

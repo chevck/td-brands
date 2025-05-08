@@ -10,7 +10,7 @@ import Corn from "../assets/corn.png";
 import MangroveProducts from "../assets/mangroove-products.png";
 import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
-// import Carousel from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import React, { useCallback, useEffect, useState } from "react";
 import { Footer } from "../components/footer";
 import { trackPageView } from "../utils/segment";
@@ -24,23 +24,23 @@ export function LandingPage() {
   const [pos, setPos] = useState("prev");
   const [pageLoading, setPageLoading] = useState(true);
 
-  // const responsive = {
-  //   desktop: {
-  //     breakpoint: { max: 3000, min: 1024 },
-  //     items: 3,
-  //     slidesToSlide: 3, // optional, default to 1.
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2,
-  //     slidesToSlide: 2, // optional, default to 1.
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1,
-  //     slidesToSlide: 1, // optional, default to 1.
-  //   },
-  // };
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   const client = createClient({
     space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -106,76 +106,76 @@ export function LandingPage() {
   console.log({ recipes });
 
   return (
-    <div className='landing-page'>
+    <div className="landing-page">
       {pageLoading ? <PageLoadingShimmer /> : null}
       <Header />
-      <div className=''>
+      <div className="">
         {/* <div className="container-fluid"> */}
-        <div className='hero-section'>
-          <div className='hero-section-content'>
+        <div className="hero-section">
+          <div className="hero-section-content">
             <img
-              className='hero-section-img _left-leaves'
+              className="hero-section-img _left-leaves"
               src={LeavesLeft}
-              alt='Leaves Left'
+              alt="Leaves Left"
             />
             <img
-              className='hero-section-img _tomatoes'
+              className="hero-section-img _tomatoes"
               src={Tomatoes}
-              alt='Tomatoes'
+              alt="Tomatoes"
             />
             <img
-              className='hero-section-img _full-color-flavor'
+              className="hero-section-img _full-color-flavor"
               src={FullColorFlavorImg}
-              alt='Full Color Flavor'
+              alt="Full Color Flavor"
             />
-            <img className='hero-section-img _beans' src={Beans} alt='Beans' />
+            <img className="hero-section-img _beans" src={Beans} alt="Beans" />
             <img
-              className='hero-section-img _leaves-right'
+              className="hero-section-img _leaves-right"
               src={LeavesRight}
-              alt='Leaves Right'
+              alt="Leaves Right"
             />
-            <img className='hero-section-img _corn' src={Corn} alt='Corn' />
-            <a href='/store-locator'>
+            <img className="hero-section-img _corn" src={Corn} alt="Corn" />
+            <a href="/store-locator">
               <button>
                 <p>Where to Buy</p>
-                <i className='bi bi-chevron-right'></i>
+                <i className="bi bi-chevron-right"></i>
               </button>
             </a>
           </div>
         </div>
-        <div className='products-range' id='products-range'>
+        <div className="products-range" id="products-range">
           <h5>Explore our range</h5>
-          <div className=''>
-            <div className='products'>
+          <div className="">
+            <div className="products">
               <img
                 src={MangroveSweetCorn}
-                alt='sweet corn'
-                className='img-fluid'
+                alt="sweet corn"
+                className="img-fluid"
               />
               <img
                 src={
                   "https://images.ctfassets.net/b9z5sch0zany/uw8Sa1f0N1XiG6KYyCPpN/c200642270d721a490b8934aa883b8da/MANGROVE_CANS_SARDINES.png"
                 }
-                alt='sardines'
-                className='img-fluid'
+                alt="sardines"
+                className="img-fluid"
               />
               <img
                 src={
                   "https://images.ctfassets.net/b9z5sch0zany/2AbCvvdQhmmwthp7Gq2jUc/565dff0f1e2e7c75b16291598597feba/MANGROVE_CAN_BAKED-BEANS.png"
                 }
-                alt='baked beans'
-                className='img-fluid'
+                alt="baked beans"
+                className="img-fluid"
               />
-              <img src={MangroveGreenPeas} alt='peas' className='img-fluid' />
+              <img src={MangroveGreenPeas} alt="peas" className="img-fluid" />
               <img
                 src={
                   "https://images.ctfassets.net/b9z5sch0zany/4ksgBaRv2XA0THoABxBGU5/5974040fea3caea221d21d45d78cab0d/MANGROVE_CAN_MACKEREL.png"
                 }
-                alt='mackerel'
-                className='img-fluid'
+                alt="mackerel"
+                className="img-fluid"
               />
             </div>
-            <div className='discover-more-btn'>
+            <div className="discover-more-btn">
               {/* <button>
                 <p>Discover More</p>
                 <i className="bi bi-chevron-right"></i>
@@ -183,9 +183,9 @@ export function LandingPage() {
             </div>
           </div>
         </div>
-        <div className='about-mangrove' id='about-us'>
+        <div className="about-mangrove" id="about-us">
           <h5>About Mangrove Foods</h5>
-          <img src={Peas} alt='Peas' className='img-fluid side-img peas' />
+          <img src={Peas} alt="Peas" className="img-fluid side-img peas" />
           <h6>
             Everyone at Mangrove Foods works hard to bring you high-quality
             ingredients from across the tropics direct to your door. From rice
@@ -194,22 +194,22 @@ export function LandingPage() {
           </h6>
           <img
             src={MangroveProducts}
-            alt='Mangrove Products'
-            className='img-fluid'
+            alt="Mangrove Products"
+            className="img-fluid"
           />
-          <div className='about-mangrove-block-2'></div>
+          <div className="about-mangrove-block-2"></div>
           <img
             src={PepperNut}
-            alt='Pepper Nut'
-            className='img-fluid side-img pepper-nut'
+            alt="Pepper Nut"
+            className="img-fluid side-img pepper-nut"
           />
         </div>
-        <div className='our-recipes'>
+        <div className="our-recipes">
           <h5>Mangrove Recipes</h5>
-          <div className='our-recipes-content'>
-            <div className='embla' ref={emblaRef}>
+          {/* <div className="our-recipes-content">
+            <div className="embla" ref={emblaRef}>
               <div
-                className='embla__container'
+                className="embla__container"
                 style={{
                   width: "100%",
                   justifyContent: recipes.length > 3 ? "left" : "center",
@@ -217,17 +217,17 @@ export function LandingPage() {
               >
                 {[...recipes].map((recipe, key) => (
                   <div
-                    className='our-recipes-content-item embla__slide'
+                    className="our-recipes-content-item embla__slide"
                     key={key}
                   >
-                    <div className='our-recipes-content-item-img'>
+                    <div className="our-recipes-content-item-img">
                       <img
                         src={recipe.fields.foodImage.fields.file.url}
                         alt={recipe.fields.foodImage.fields.title}
-                        className='img-fluid'
+                        className="img-fluid"
                       />
                     </div>
-                    <div className='our-recipes-content-item-text'>
+                    <div className="our-recipes-content-item-text">
                       <h6>{recipe.fields.foodName}</h6>
                       <p>{recipe.fields.description}</p>
                       <button
@@ -236,14 +236,14 @@ export function LandingPage() {
                         }
                       >
                         <p>See Recipe</p>
-                        <i className='bi bi-chevron-right'></i>
+                        <i className="bi bi-chevron-right"></i>
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
               {recipes.length ? (
-                <div className='embla__controllers'>
+                <div className="embla__controllers">
                   <button
                     className={
                       "embla__prev scroll-controller" +
@@ -261,58 +261,54 @@ export function LandingPage() {
                 </div>
               ) : null}
             </div>
-          </div>
-          {/* <div className='our-recipes-content'>
+          </div> */}
+          <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              autoPlaySpeed={5000}
-              autoPlay={true}
+              // autoPlaySpeed={5000}
+              // autoPlay={true}
               centerMode={false}
               draggable={true}
               showDots={true}
               responsive={responsive}
-              className='our-recipes-content-carousel'
-              dotListClass='custom-dot-list-style'
+              // className="our-recipes-content-carousel"
+              dotListClass="custom-dot-list-style"
               renderDotsOutside={true}
               // infinite={true}
             >
-              {[...recipes, ...recipes, ...recipes, ...recipes].map(
-                (recipe, key) => (
-                  <div className='our-recipes-content-item' key={key}>
-                    <div className='our-recipes-content-item-img'>
-                      <img
-                        src={recipe.fields.foodImage.fields.file.url}
-                        alt={recipe.fields.foodImage.fields.title}
-                        className='img-fluid'
-                      />
-                    </div>
-                    <div className='our-recipes-content-item-text'>
-                      <h6>{recipe.fields.foodName}</h6>
-                      <p>
-                        {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
-                        with {recipe.fields.ingredients}
-                      </p>
-                      <button
-                        onClick={() => (window.location.href = `/recipes`)}
-                      >
-                        <p>See Recipe</p>
-                        <i className='bi bi-chevron-right'></i>
-                      </button>
-                    </div>
+              {recipes.map((recipe, key) => (
+                <div className="our-recipes-content-item" key={key}>
+                  <div className="our-recipes-content-item-img">
+                    <img
+                      src={recipe.fields.foodImage.fields.file.url}
+                      alt={recipe.fields.foodImage.fields.title}
+                      className="img-fluid"
+                    />
                   </div>
-                )
-              )}
+                  <div className="our-recipes-content-item-text">
+                    <h6>{recipe.fields.foodName}</h6>
+                    <p>
+                      {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
+                      with {recipe.fields.ingredients}
+                    </p>
+                    <button onClick={() => (window.location.href = `/recipes`)}>
+                      <p>See Recipe</p>
+                      <i className="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+              ))}
             </Carousel>
-          </div> */}
+          </div>
 
           {recipes.length ? (
-            <div className='more-recipes-btn-container'>
+            <div className="more-recipes-btn-container">
               <button
-                className='more-recipes-btn'
+                className="more-recipes-btn"
                 onClick={() => (window.location.href = "/recipes")}
               >
                 <p>All Recipes</p>
-                <i className='bi bi-chevron-right'></i>
+                <i className="bi bi-chevron-right"></i>
               </button>
             </div>
           ) : null}
