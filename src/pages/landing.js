@@ -11,17 +11,21 @@ import MangroveProducts from "../assets/mangroove-products.png";
 import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
 import Carousel from "react-multi-carousel";
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  // useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { Footer } from "../components/footer";
 import { trackPageView } from "../utils/segment";
 import { toast } from "react-toastify";
 import { createClient } from "contentful";
-import useEmblaCarousel from "embla-carousel-react";
+// import useEmblaCarousel from "embla-carousel-react";
 import { PageLoadingShimmer } from "../components/page-loading";
 
 export function LandingPage() {
   const [recipes, setRecipes] = useState([]);
-  const [pos, setPos] = useState("prev");
+  // const [pos, setPos] = useState("prev");
   const [pageLoading, setPageLoading] = useState(true);
 
   const responsive = {
@@ -47,17 +51,17 @@ export function LandingPage() {
     accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY,
   });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    containScroll: true,
-    slidesToScroll: 2,
-    duration: 5,
-  });
+  // const [emblaRef, emblaApi] = useEmblaCarousel({
+  //   containScroll: true,
+  //   slidesToScroll: 2,
+  //   duration: 5,
+  // });
 
-  useEffect(() => {
-    if (emblaApi) {
-      console.log(emblaApi.slideNodes()); // Access API
-    }
-  }, [emblaApi]);
+  // useEffect(() => {
+  //   if (emblaApi) {
+  //     console.log(emblaApi.slideNodes()); // Access API
+  //   }
+  // }, [emblaApi]);
 
   const fetchRecipes = async () => {
     try {
@@ -93,15 +97,15 @@ export function LandingPage() {
     // eslint-disable-next-line
   }, []);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-    setPos("prev");
-  }, [emblaApi]);
+  // const scrollPrev = useCallback(() => {
+  //   if (emblaApi) emblaApi.scrollPrev();
+  //   setPos("prev");
+  // }, [emblaApi]);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-    setPos("next");
-  }, [emblaApi]);
+  // const scrollNext = useCallback(() => {
+  //   if (emblaApi) emblaApi.scrollNext();
+  //   setPos("next");
+  // }, [emblaApi]);
 
   console.log({ recipes });
 
