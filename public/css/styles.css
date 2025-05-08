@@ -528,30 +528,20 @@ button {
           background: #fcea56;
           overflow: hidden;
           align-items: center;
-          width: 100%;
+          width: 690px;
 
           h6 {
             color: #004772 !important;
           }
 
           .our-recipes-content-item-img {
-            /* width: 600px;
-          margin-left: -110px;
-          padding: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center; */
-
-            /* width: 500px;
-          height: 500px; */
-            width: 350px;
-            height: 300px;
-            /* margin-left: -110px; */
-            padding: 15px;
+            width: 400px;
+            height: 350px;
+            padding: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            position: absolute;
             left: -120px;
 
             img {
@@ -564,6 +554,9 @@ button {
           .our-recipes-content-item-text {
             z-index: 2;
             width: 300px;
+            position: relative;
+            left: 250px;
+
             h6 {
               color: #fff;
               font-size: 45px;
