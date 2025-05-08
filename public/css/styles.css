@@ -417,6 +417,10 @@ button {
 
         ul {
           gap: 35px;
+
+          li {
+            width: 690px !important;
+          }
         }
       }
 
