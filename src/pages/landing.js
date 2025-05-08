@@ -291,11 +291,12 @@ export function LandingPage() {
                   </div>
                   <div className="our-recipes-content-item-text">
                     <h6>{recipe.fields.foodName}</h6>
-                    <p>
-                      {recipe.fields.origin}. {recipe.fields.vibe}. Prepared
-                      with {recipe.fields.ingredients}
-                    </p>
-                    <button onClick={() => (window.location.href = `/recipes`)}>
+                    <p>{recipe.fields.description}</p>
+                    <button
+                      onClick={() =>
+                        (window.location.href = `/recipes?food=${recipe.fields.foodName}`)
+                      }
+                    >
                       <p>See Recipe</p>
                       <i className="bi bi-chevron-right"></i>
                     </button>

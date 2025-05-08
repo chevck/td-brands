@@ -528,8 +528,10 @@ button {
           align-items: center;
           justify-content: center; */
 
-          width: 500px;
-          height: 500px;
+          /* width: 500px;
+          height: 500px; */
+          width: 350px;
+          height: 300px;
           /* margin-left: -110px; */
           padding: 25px;
           display: flex;
@@ -540,11 +542,14 @@ button {
 
           img {
             object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
           }
         }
 
         .our-recipes-content-item-text {
           z-index: 2;
+          width: 300px;
           h6 {
             color: #fff;
             font-size: 45px;
@@ -563,6 +568,12 @@ button {
             line-height: 24px;
             margin-bottom: 20px;
             color: #004f4e;
+            max-height: 100px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           button {

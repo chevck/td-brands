@@ -523,7 +523,7 @@
 
       .our-recipes-content {
         .our-recipes-content-item {
-          width: 400px;
+          /* width: 400px; */
           padding: 15px;
           height: 216px;
           border-radius: 19px;
@@ -541,9 +541,8 @@
 
           .our-recipes-content-item-text {
             h6 {
-              font-size: 35px !important;
-              margin-bottom: 10px !important;
-              height: 76px;
+              font-size: 35px;
+              margin-bottom: 10px;
             }
             p {
               margin-bottom: 15px;
