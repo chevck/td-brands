@@ -11,21 +11,15 @@ import MangroveProducts from "../assets/mangroove-products.png";
 import Peas from "../assets/peas.png";
 import PepperNut from "../assets/pepper-nut.png";
 import Carousel from "react-multi-carousel";
-import React, {
-  // useCallback,
-  useEffect,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 import { Footer } from "../components/footer";
 import { trackPageView } from "../utils/segment";
 import { toast } from "react-toastify";
 import { createClient } from "contentful";
-// import useEmblaCarousel from "embla-carousel-react";
 import { PageLoadingShimmer } from "../components/page-loading";
 
 export function LandingPage() {
   const [recipes, setRecipes] = useState([]);
-  // const [pos, setPos] = useState("prev");
   const [pageLoading, setPageLoading] = useState(true);
 
   const responsive = {
@@ -50,18 +44,6 @@ export function LandingPage() {
     space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
     accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY,
   });
-
-  // const [emblaRef, emblaApi] = useEmblaCarousel({
-  //   containScroll: true,
-  //   slidesToScroll: 2,
-  //   duration: 5,
-  // });
-
-  // useEffect(() => {
-  //   if (emblaApi) {
-  //     console.log(emblaApi.slideNodes()); // Access API
-  //   }
-  // }, [emblaApi]);
 
   const fetchRecipes = async () => {
     try {
@@ -96,18 +78,6 @@ export function LandingPage() {
     fetchRecipes();
     // eslint-disable-next-line
   }, []);
-
-  // const scrollPrev = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollPrev();
-  //   setPos("prev");
-  // }, [emblaApi]);
-
-  // const scrollNext = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollNext();
-  //   setPos("next");
-  // }, [emblaApi]);
-
-  console.log({ recipes });
 
   return (
     <div className="landing-page">
@@ -210,67 +180,11 @@ export function LandingPage() {
         </div>
         <div className="our-recipes">
           <h5>Mangrove Recipes</h5>
-          {/* <div className="our-recipes-content">
-            <div className="embla" ref={emblaRef}>
-              <div
-                className="embla__container"
-                style={{
-                  width: "100%",
-                  justifyContent: recipes.length > 3 ? "left" : "center",
-                }}
-              >
-                {[...recipes].map((recipe, key) => (
-                  <div
-                    className="our-recipes-content-item embla__slide"
-                    key={key}
-                  >
-                    <div className="our-recipes-content-item-img">
-                      <img
-                        src={recipe.fields.foodImage.fields.file.url}
-                        alt={recipe.fields.foodImage.fields.title}
-                        className="img-fluid"
-                      />
-                    </div>
-                    <div className="our-recipes-content-item-text">
-                      <h6>{recipe.fields.foodName}</h6>
-                      <p>{recipe.fields.description}</p>
-                      <button
-                        onClick={() =>
-                          (window.location.href = `/recipes?food=${recipe.fields.foodName}`)
-                        }
-                      >
-                        <p>See Recipe</p>
-                        <i className="bi bi-chevron-right"></i>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {recipes.length ? (
-                <div className="embla__controllers">
-                  <button
-                    className={
-                      "embla__prev scroll-controller" +
-                      (pos === "prev" ? " active" : "")
-                    }
-                    onClick={scrollPrev}
-                  ></button>
-                  <button
-                    className={
-                      "embla__next scroll-controller" +
-                      (pos === "next" ? " active" : "")
-                    }
-                    onClick={scrollNext}
-                  ></button>
-                </div>
-              ) : null}
-            </div>
-          </div> */}
           <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              // autoPlaySpeed={5000}
-              // autoPlay={true}
+              autoPlay={true}
+              autoPlaySpeed={5000}
               centerMode={false}
               draggable={true}
               showDots={true}
@@ -278,7 +192,7 @@ export function LandingPage() {
               // className="our-recipes-content-carousel"
               dotListClass="custom-dot-list-style"
               renderDotsOutside={true}
-              // infinite={true}
+              infinite={true}
             >
               {recipes.map((recipe, key) => (
                 <div className="our-recipes-content-item" key={key}>
