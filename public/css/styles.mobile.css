@@ -484,6 +484,10 @@
 
         .react-multi-carousel-list {
           margin-bottom: 40px;
+
+          ul li {
+            width: 100vw !important;
+          }
         }
 
         .our-recipes-content-carousel {
@@ -526,10 +530,7 @@
           ul {
             gap: 0;
           }
-          /* width: fit-content; */
           .react-multi-carousel-item {
-            /* width: fit-content; */
-
             .our-recipes-content-item {
               width: 100%;
               padding: 15px;
