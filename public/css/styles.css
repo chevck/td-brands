@@ -536,14 +536,14 @@ button {
           }
 
           .our-recipes-content-item-img {
-            width: 400px;
-            height: 350px;
+            width: 300px;
+            height: 280px;
             padding: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: absolute;
-            left: -120px;
+            left: -27px;
 
             img {
               object-fit: contain;
