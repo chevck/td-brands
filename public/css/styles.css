@@ -524,10 +524,11 @@ button {
           position: relative;
           border-radius: 31px;
           padding: 35px;
-          max-width: 600px;
+          max-width: 690px;
           background: #fcea56;
           overflow: hidden;
           align-items: center;
+          min-width: 600px;
           width: 100%;
 
           h6 {

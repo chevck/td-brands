@@ -535,6 +535,7 @@
               padding: 15px;
               height: 216px;
               border-radius: 19px;
+              min-width: 100%;
 
               .our-recipes-content-item-img {
                 width: 300px;
