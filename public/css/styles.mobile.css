@@ -528,6 +528,8 @@
           }
           /* width: fit-content; */
           .react-multi-carousel-item {
+            /* width: fit-content; */
+
             .our-recipes-content-item {
               width: 100%;
               padding: 15px;

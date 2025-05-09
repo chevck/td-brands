@@ -528,7 +528,7 @@ button {
           background: #fcea56;
           overflow: hidden;
           align-items: center;
-          width: 690px;
+          width: 100%;
 
           h6 {
             color: #004772 !important;
