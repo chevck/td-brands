@@ -183,8 +183,8 @@ export function LandingPage() {
           <div className="our-recipes-content">
             <Carousel
               arrows={false}
-              autoPlay={true}
-              autoPlaySpeed={5000}
+              // autoPlay={true}
+              // autoPlaySpeed={5000}
               centerMode={false}
               draggable={true}
               showDots={true}
@@ -192,7 +192,7 @@ export function LandingPage() {
               // className="our-recipes-content-carousel"
               dotListClass="custom-dot-list-style"
               renderDotsOutside={true}
-              infinite={true}
+              // infinite={true}
             >
               {recipes.map((recipe, key) => (
                 <div className="our-recipes-content-item" key={key}>

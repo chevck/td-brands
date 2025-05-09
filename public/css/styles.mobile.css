@@ -522,45 +522,60 @@
       }
 
       .our-recipes-content {
-        .our-recipes-content-item {
-          /* width: 400px; */
-          padding: 15px;
-          height: 216px;
-          border-radius: 19px;
-
-          .our-recipes-content-item-img {
-            margin-top: -31px;
-            left: -70px;
-            padding: 0;
-
-            img {
-              width: 295px;
-              margin-top: 30px;
-            }
+        .react-multi-carousel-list {
+          ul {
+            gap: 0;
           }
+          /* width: fit-content; */
+          .react-multi-carousel-item {
+            .our-recipes-content-item {
+              width: 100%;
+              padding: 15px;
+              height: 216px;
+              border-radius: 19px;
 
-          .our-recipes-content-item-text {
-            h6 {
-              font-size: 35px;
-              margin-bottom: 10px;
-            }
-            p {
-              margin-bottom: 15px;
-              font-size: 15px;
-              line-height: 20px;
-              display: -webkit-box;
-              -webkit-line-clamp: 2; /* Limit to 2 lines */
-              -webkit-box-orient: vertical;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              width: 200px;
-            }
-            button {
-              width: 165px;
-              font-size: 14px;
+              .our-recipes-content-item-img {
+                width: 300px;
+                height: 290px;
+                /* margin-top: -31px;
+              left: -70px; */
+                padding: 0;
 
-              p {
-                margin-bottom: 0;
+                img {
+                  width: 195px;
+                }
+              }
+
+              .our-recipes-content-item-text {
+                position: absolute;
+                right: 20px;
+                width: fit-content;
+                left: auto;
+
+                h6 {
+                  font-size: 35px;
+                  margin-bottom: 10px;
+                  width: 220px;
+                }
+                p {
+                  margin-bottom: 15px;
+                  font-size: 15px;
+                  line-height: 20px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2; /* Limit to 2 lines */
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  width: 200px;
+                }
+                button {
+                  width: 165px;
+                  font-size: 14px;
+
+                  p {
+                    margin-bottom: 0;
+                  }
+                }
               }
             }
           }
