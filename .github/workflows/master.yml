@@ -1,0 +1,45 @@
+name: Continuous Intergration & Deployment
+
+on:
+  push:
+    branches:
+      - td-mangroove
+jobs:
+  build_trade_depot_web:
+    name: Build TradeDepot Mangrove Brand Page
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@td-mangroove
+      - name: Install Web Dependencies
+        run: npm install
+      - name: Build Web App
+        run: npm run build
+        env:
+          REACT_APP_MAPBOX_KEY: pk.eyJ1IjoiZXhjZWxseWQiLCJhIjoiY2txN3h0eDFqMGFtZDJ4azMxMHJ1MDRoYSJ9.jl8GExu6qmJO4syF4k-G8g
+          REACT_APP_CONTENTFUL_SPACE_ID: b9z5sch0zany
+          REACT_APP_CONTENTFUL_API_KEY: v3pAm-HOZ_lGKI8oNMcPRGDWpAsliP8OohfLYS8sGsk
+          REACT_APP_SEGMENT_WRITE_KEY: fXuPpZP9MOkICrwmXGUhbCHk3lhVA7zU
+          REACT_APP_ADDRESS_MAP_KEY: AIzaSyCFTa4JnSNnsj0FmSDgOFr4ESmTUUUp1kE
+          REACT_APP_TENANT_ID: D68xQQFQPG9pbMJnc
+          REACT_APP_IPINFO_TOKEN: fe3d5f7b13e8e7
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Deploy static site to S3 bucket
+        env:
+          S3_BUCKET_NAME: td-mangrove
+          OUT_PATH: td-mangrove
+          S3_CACHE_MAX_AGE: ${{ secrets.S3_CACHE_MAX_AGE }}
+        run: |
+          aws s3 sync build/ s3://$S3_BUCKET_NAME --delete
+          aws s3 cp s3://$S3_BUCKET_NAME s3://$S3_BUCKET_NAME/$( date +%Y%m%d%H%M%S ) --recursive
+      - name: Invalidate Cloud front distribution
+        env:
+          CLOUD_FRONT_DISTRIBUTION: EVFT3QU23SSIV
+        run: aws cloudfront create-invalidation --distribution-id $CLOUD_FRONT_DISTRIBUTION --paths "/*"
