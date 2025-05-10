@@ -3,7 +3,7 @@ name: Continuous Intergration & Deployment
 on:
   push:
     branches:
-      - td-mangroove
+      - master
 jobs:
   build_trade_depot_web:
     name: Build TradeDepot Mangrove Brand Page
@@ -12,7 +12,7 @@ jobs:
       name: prod
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@td-mangroove
+        uses: actions/checkout@master
       - name: Install Web Dependencies
         run: npm install
       - name: Build Web App
