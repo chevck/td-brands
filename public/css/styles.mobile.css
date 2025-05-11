@@ -324,7 +324,9 @@
     padding: 0px 20px;
 
     .navbar {
+      padding: 0;
       .navbar-brand {
+        padding: 0;
         img {
           width: 150px;
         }
