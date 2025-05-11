@@ -126,6 +126,7 @@ button {
   .navbar {
     .navbar-brand {
       cursor: pointer;
+      padding: 25px 0;
       img {
         width: 250px;
         height: fit-content;
